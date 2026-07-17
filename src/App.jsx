@@ -37,14 +37,15 @@ import {
   ExternalLink,
   ArrowRightCircle,
 } from "lucide-react";
-import { FaWhatsapp,FaGoogle } from "react-icons/fa";
+import { FaWhatsapp, FaGoogle } from "react-icons/fa";
 
 // --- CONFIGURATION & DATA ---
 
 // A/B Testing Constant for Primary CTA
 const PRIMARY_CTA_TEXT = "START LEARNING ETHICAL HACKING TODAY";
 
-const GOOGLE_REVIEW_URL = "https://qnayds.in/"; // 
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LC4oL8ozK88yYLRSNagwTko0T01LTk60SDZKM0pMszKoSEoxNbawsDRPskgxNzYxSfJiK8xLrEwpBgBZoBMV&q=qnayds&rlz=1CDGOYI_enIN1209IN1210&oq=qnayds&gs_lcrp=EgZjaHJvbWUqEggFEC4YJxivARjHARi6AhiOBTIGCAAQRRg8MgYIARBFGDwyBggCEEUYPDIGCAMQRRg8MgYIBBBFGDwyEggFEC4YJxivARjHARi6AhiOBTIGCAYQRRg7MgkIBxBFGDsYgAQyCQgIEEUYOxiABDIHCAkQABiABNIBCDIwMDFqMGo3qAIasAIB4gMEGAEgX_EFMiM1YNrxwWTxBTIjNWDa8cFk&hl=en-GB&sourceid=chrome-mobile&ie=UTF-8#ebo=0&mpd=~3379620392164112321/customers/reviews"; //
 
 const OFFER_HOURS = 5;
 const OFFER_MINS = 42;
@@ -623,20 +624,20 @@ export default function App() {
       {/* SECTION 5: VISUAL GOOGLE TRUST */}
       <section className="py-12 bg-slate-50 px-6 border-b border-slate-200">
         <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-         <div className="flex justify-center items-center gap-3 mb-4">
-  <div className="bg-white p-2 rounded-full shadow-md border border-slate-200">
-    <FaGoogle className="text-[#4285F4] text-2xl" />
-  </div>
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <div className="bg-white p-2 rounded-full shadow-md border border-slate-200">
+              <FaGoogle className="text-[#4285F4] text-2xl" />
+            </div>
 
-  <div className="text-left">
-    <h3 className="text-blue-950 font-black text-xl leading-none">
-      Google Reviews
-    </h3>
-    <p className="text-xs text-slate-500 font-semibold mt-1">
-      Trusted by Thousands of Students
-    </p>
-  </div>
-</div>
+            <div className="text-left">
+              <h3 className="text-blue-950 font-black text-xl leading-none">
+                Google Reviews
+              </h3>
+              <p className="text-xs text-slate-500 font-semibold mt-1">
+                Trusted by Thousands of Students
+              </p>
+            </div>
+          </div>
 
           <div className="flex justify-center items-center gap-3 mb-4">
             <span className="text-5xl font-black text-blue-950 leading-none">
