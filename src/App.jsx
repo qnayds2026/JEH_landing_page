@@ -44,7 +44,7 @@ import { FaWhatsapp,FaGoogle } from "react-icons/fa";
 // A/B Testing Constant for Primary CTA
 const PRIMARY_CTA_TEXT = "START LEARNING ETHICAL HACKING TODAY";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/your-google-business-link/review"; // Update this link
+const GOOGLE_REVIEW_URL = "https://qnayds.in/"; // 
 
 const OFFER_HOURS = 5;
 const OFFER_MINS = 42;
