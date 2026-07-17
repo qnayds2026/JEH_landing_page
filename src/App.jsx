@@ -37,7 +37,7 @@ import {
   ExternalLink,
   ArrowRightCircle,
 } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp,FaGoogle } from "react-icons/fa";
 
 // --- CONFIGURATION & DATA ---
 
@@ -224,7 +224,8 @@ export default function App() {
     // Sales Notification Logic
     let isMounted = true;
     const triggerNotification = () => {
-      if (!isMounted) return;
+      if (!isMounted || activeVideoId) return;
+
       setNotification({
         show: true,
         name: getRandomElement(BUYER_NAMES),
@@ -245,7 +246,7 @@ export default function App() {
       clearInterval(interval);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeVideoId]);
 
   const getCheckoutUrl = () => {
     const baseUrl =
@@ -324,19 +325,28 @@ export default function App() {
       <div
         className="w-full h-137.5 relative cursor-pointer bg-slate-900"
         onClick={() => {
+          setNotification((prev) => ({ ...prev, show: false }));
           setActiveVideoId(video.id);
           trackEvent("Video_Play", { video_id: video.id });
         }}
       >
         {activeVideoId === video.id ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
-            title="Student Review"
-            className="w-full h-full border-0 absolute inset-0 z-10"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+          <>
+            <button
+              onClick={(e) => setActiveVideoId(null)}
+              className="absolute top-2 right-2 z-20 bg-black/70 text-white px-2 py-1 rounded"
+            >
+              ✕
+            </button>
+
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
+              title="Student Review"
+              className="w-full h-full border-0 absolute inset-0 z-10"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </>
         ) : (
           <>
             <img
@@ -613,16 +623,20 @@ export default function App() {
       {/* SECTION 5: VISUAL GOOGLE TRUST */}
       <section className="py-12 bg-slate-50 px-6 border-b border-slate-200">
         <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-          <div className="flex justify-center items-center mb-3">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt="Google Logo"
-              className="h-6 w-6 mr-2"
-            />
-            <h3 className="text-slate-800 font-black text-lg">
-              Google Reviews
-            </h3>
-          </div>
+         <div className="flex justify-center items-center gap-3 mb-4">
+  <div className="bg-white p-2 rounded-full shadow-md border border-slate-200">
+    <FaGoogle className="text-[#4285F4] text-2xl" />
+  </div>
+
+  <div className="text-left">
+    <h3 className="text-blue-950 font-black text-xl leading-none">
+      Google Reviews
+    </h3>
+    <p className="text-xs text-slate-500 font-semibold mt-1">
+      Trusted by Thousands of Students
+    </p>
+  </div>
+</div>
 
           <div className="flex justify-center items-center gap-3 mb-4">
             <span className="text-5xl font-black text-blue-950 leading-none">
