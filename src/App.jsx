@@ -190,7 +190,6 @@ export default function App() {
   useEffect(() => {
     document.title =
       "30-Day Ethical Hacking Masterclass in Malayalam | QNAYDS Academy";
-    trackEvent("PageView");
     trackEvent("ViewContent");
 
     // Scroll Tracking
@@ -668,17 +667,17 @@ export default function App() {
             </div>
           </div>
 
-<div className="mt-4 flex justify-center">
-  <a
-    href={GOOGLE_REVIEW_URL}
-    onClick={() => trackEvent("Google_Review_Click")}
-    className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-blue-200 rounded-full shadow-sm hover:shadow-md text-blue-600 hover:text-blue-800 font-semibold transition-all duration-300 hover:-translate-y-0.5"
-  >
-    <FaGoogle className="text-[#4285F4] text-lg" />
-    Read Google Reviews
-    <ExternalLink size={14} />
-  </a>
-</div>
+          <div className="mt-4 flex justify-center">
+            <a
+              href={GOOGLE_REVIEW_URL}
+              onClick={() => trackEvent("Google_Review_Click")}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-blue-200 rounded-full shadow-sm hover:shadow-md text-blue-600 hover:text-blue-800 font-semibold transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <FaGoogle className="text-[#4285F4] text-lg" />
+              Read Google Reviews
+              <ExternalLink size={14} />
+            </a>
+          </div>
         </div>
       </section>
 
