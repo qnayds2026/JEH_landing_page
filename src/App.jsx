@@ -38,6 +38,7 @@ import {
   ArrowRightCircle,
 } from "lucide-react";
 import { FaWhatsapp, FaGoogle } from "react-icons/fa";
+import Intro from "./assets/Intro.MP4";
 
 // --- CONFIGURATION & DATA ---
 
@@ -261,7 +262,21 @@ export default function App() {
 
   const handlePurchase = (location = "Unknown") => {
     trackEvent("InitiateCheckout", { button_location: location });
-    window.location.href = getCheckoutUrl();
+
+    const message = `Hi QNAYDS Team,
+
+I would like to enroll in the 30-Day Ethical Hacking Masterclass.
+
+Course Fee: ₹999
+
+Please send me the payment details.
+
+Source: ${location}`;
+
+    window.open(
+      `https://wa.me/919074871204?text=${encodeURIComponent(message)}`,
+      "_blank",
+    );
   };
 
   const handleWhatsAppContact = (context = "Floating Button") => {
@@ -490,6 +505,25 @@ export default function App() {
           </p>
 
           <StickyTrustBar />
+
+          {/* INTRO VIDEO */}
+          <div className="max-w-sm md:max-w-md lg:max-w-lg mx-auto mt-8 mb-8">
+            <p className="text-center text-blue-600 font-bold uppercase tracking-wider mb-4">
+              🎥 WATCH BEFORE YOU ENROLL
+            </p>
+
+            <div className="rounded-3xl overflow-hidden border border-blue-100 shadow-2xl bg-black">
+              <video
+                className="w-full max-h-125 md:max-h-150 object-contain rounded-3xl"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/course-poster.webp"
+              >
+                <source src={Intro} type="video/mp4" />
+              </video>
+            </div>
+          </div>
 
           <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 max-w-md mx-auto shadow-2xl relative overflow-hidden mt-6">
             <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-md">
