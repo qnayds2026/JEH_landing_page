@@ -39,6 +39,7 @@ import {
 } from "lucide-react";
 import { FaWhatsapp, FaGoogle } from "react-icons/fa";
 import Intro from "./assets/Intro.MP4";
+import thumbnail from "./assets/thumbnail.webp";
 
 // --- CONFIGURATION & DATA ---
 
@@ -518,7 +519,7 @@ Source: ${location}`;
                 controls
                 playsInline
                 preload="metadata"
-                poster="/course-poster.webp"
+                poster={thumbnail}
               >
                 <source src={Intro} type="video/mp4" />
               </video>
