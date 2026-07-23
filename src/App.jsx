@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import QnaydsLOgo from "../src/assets/QNAYDS_LOGO.png";
 import Alan_sir from "../src/assets/Alan_sir.webp";
+import CheckoutModal from "./components/CheckoutModal";
 import {
   CheckCircle2,
   Play,
@@ -40,8 +41,11 @@ import {
 import { FaWhatsapp, FaGoogle } from "react-icons/fa";
 import Intro from "./assets/Intro.MP4";
 import thumbnail from "./assets/thumbnail.webp";
+import axios from "axios";
 
-// --- CONFIGURATION & DATA ---
+const API_URL = import.meta.env.VITE_API_URL;
+const COURSE_ID = import.meta.env.VITE_COURSE_ID;
+const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY;
 
 // A/B Testing Constant for Primary CTA
 const PRIMARY_CTA_TEXT = "START LEARNING ETHICAL HACKING TODAY";
@@ -176,6 +180,15 @@ export default function App() {
     location: "",
     time: "",
   });
+  const [showCheckout, setShowCheckout] = useState(false);
+
+  const [checkoutData, setCheckoutData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const [loading, setLoading] = useState(false);
 
   // Custom Event Tracker for Meta Pixel
   const trackEvent = (eventName, params = {}) => {
@@ -261,23 +274,118 @@ export default function App() {
     return baseUrl;
   };
 
-  const handlePurchase = (location = "Unknown") => {
-    trackEvent("InitiateCheckout", { button_location: location });
+  const handleCheckout = async () => {
+    // Validation
+    if (!checkoutData.name.trim()) {
+      alert("Please enter your full name.");
+      return;
+    }
 
-    const message = `Hi QNAYDS Team,
+    if (!checkoutData.email.trim()) {
+      alert("Please enter your email address.");
+      return;
+    }
 
-I would like to enroll in the 30-Day Ethical Hacking Masterclass.
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-Course Fee: ₹999
+    if (!emailRegex.test(checkoutData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
-Please send me the payment details.
+    if (!checkoutData.phone.trim()) {
+      alert("Please enter your phone number.");
+      return;
+    }
 
-Source: ${location}`;
+    const phone = checkoutData.phone.replace(/\D/g, "");
 
-    window.open(
-      `https://wa.me/919074871204?text=${encodeURIComponent(message)}`,
-      "_blank",
-    );
+    if (phone.length !== 10) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const { data } = await axios.post(`${API_URL}/landing/create-order`, {
+        name: checkoutData.name,
+        email: checkoutData.email,
+        phone,
+        courseId: COURSE_ID,
+      });
+
+      setLoading(false);
+
+      // Close the modal before opening Razorpay
+      setShowCheckout(false);
+
+      openRazorpay(data.data);
+    } catch (error) {
+      console.error(error);
+
+      setLoading(false);
+
+      alert(
+        error.response?.data?.message ||
+          "Unable to create your order. Please try again.",
+      );
+    }
+  };
+
+  const openRazorpay = (paymentData) => {
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY,
+
+      amount: paymentData.order.amount,
+
+      currency: paymentData.order.currency,
+
+      name: "QNAYDS Academy",
+
+      description: paymentData.course.title,
+
+      order_id: paymentData.order.id,
+
+      prefill: {
+        name: paymentData.student.name,
+        email: paymentData.student.email,
+        contact: checkoutData.phone,
+      },
+
+      theme: {
+        color: "#2563eb",
+      },
+
+      handler: async function (response) {
+        try {
+          await axios.post(`${API_URL}/payments/verify`, {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          });
+
+          alert(
+            "Payment successful! Please check your email to activate your account.",
+          );
+        } catch (error) {
+          console.error(error);
+
+          alert(
+            error.response?.data?.message || "Payment verification failed.",
+          );
+        }
+      },
+      modal: {
+        ondismiss() {
+          console.log("Payment cancelled");
+        },
+      },
+    };
+
+    const razorpay = new window.Razorpay(options);
+
+    razorpay.open();
   };
 
   const handleWhatsAppContact = (context = "Floating Button") => {
@@ -565,7 +673,13 @@ Source: ${location}`;
             </div>
 
             <button
-              onClick={() => handlePurchase("Hero Box")}
+              onClick={() => {
+                trackEvent("InitiateCheckout", {
+                  button_location: "Hero Box",
+                });
+
+                setShowCheckout(true);
+              }}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-lg py-4 md:py-5 px-4 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] mb-2 flex items-center justify-center gap-2 animate-pulse-btn"
             >
               {PRIMARY_CTA_TEXT} <ArrowRight size={20} className="shrink-0" />
@@ -761,8 +875,13 @@ Source: ${location}`;
         </div>
         <div className="text-center">
           <button
-            onClick={() => handlePurchase("How It Works Section")}
-            className="bg-blue-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-blue-700 transition-colors"
+            onClick={() => {
+              trackEvent("InitiateCheckout", {
+                button_location: "Section Name",
+              });
+
+              setShowCheckout(true);
+            }}
           >
             {PRIMARY_CTA_TEXT}
           </button>
@@ -902,47 +1021,56 @@ Source: ${location}`;
         </div>
       </section>
 
-      {/* SECTION 9: 3-STEP PLAN */}
-      <section className="py-12 px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10">
-          Your Simple 3-Step Plan
-        </h2>
+{/* SECTION 9: 3-STEP PLAN */}
+<section className="py-12 px-6 max-w-5xl mx-auto">
+  <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10">
+    Start Learning in 3 Simple Steps
+  </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 text-center relative">
-          {/* Connector Line for Desktop */}
-          <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-blue-100 -z-10"></div>
+  <div className="grid md:grid-cols-3 gap-8 text-center relative">
+    {/* Connector Line */}
+    <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-blue-100 -z-10"></div>
 
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              1
-            </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">Enroll</h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Complete your registration securely.
-            </p>
-          </div>
+    {/* Step 1 */}
+    <div className="relative">
+      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+        1
+      </div>
+      <h3 className="font-bold text-blue-950 text-lg mb-2">
+        Register
+      </h3>
+      <p className="text-sm text-slate-600 font-medium">
+        Create your account and enroll in your preferred cybersecurity course.
+      </p>
+    </div>
 
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              2
-            </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">Learn</h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Watch structured recorded sessions anytime.
-            </p>
-          </div>
+    {/* Step 2 */}
+    <div className="relative">
+      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+        2
+      </div>
+      <h3 className="font-bold text-blue-950 text-lg mb-2">
+        Get Access
+      </h3>
+      <p className="text-sm text-slate-600 font-medium">
+        Receive instant access to recorded lessons, resources, and course materials.
+      </p>
+    </div>
 
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              3
-            </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">Practice</h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Build your cybersecurity foundation.
-            </p>
-          </div>
-        </div>
-      </section>
+    {/* Step 3 */}
+    <div className="relative">
+      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+        3
+      </div>
+      <h3 className="font-bold text-blue-950 text-lg mb-2">
+        Learn & Grow
+      </h3>
+      <p className="text-sm text-slate-600 font-medium">
+        Complete lessons, practice your skills, and build a strong cybersecurity career.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* SECTION 10: IMAGINE YOURSELF AFTER 30 DAYS (TRANSFORMATION) */}
       <section className="py-12 bg-blue-950 text-white px-6">
@@ -975,7 +1103,13 @@ Source: ${location}`;
 
           <div className="text-center">
             <button
-              onClick={() => handlePurchase("Transformation Section")}
+              onClick={() => {
+                trackEvent("InitiateCheckout", {
+                  button_location: "Section Name",
+                });
+
+                setShowCheckout(true);
+              }}
               className="bg-white text-blue-950 font-black py-4 px-8 md:px-12 rounded-xl shadow-lg hover:bg-blue-50 transition-colors text-lg animate-pulse-btn"
             >
               {PRIMARY_CTA_TEXT}
@@ -1330,7 +1464,13 @@ Source: ${location}`;
             </div>
 
             <button
-              onClick={() => handlePurchase("Final Offer Box")}
+              onClick={() => {
+                trackEvent("InitiateCheckout", {
+                  button_location: "Section Name",
+                });
+
+                setShowCheckout(true);
+              }}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-xl py-5 px-6 rounded-xl transition-transform transform hover:scale-[1.02] shadow-[0_0_30px_rgba(37,99,235,0.4)] flex justify-center items-center gap-2 animate-pulse-btn mb-3"
             >
               {PRIMARY_CTA_TEXT} <ArrowRight size={24} className="shrink-0" />
@@ -1419,6 +1559,14 @@ Source: ${location}`;
           </div>
         </div>
       </footer>
+      <CheckoutModal
+        open={showCheckout}
+        onClose={() => setShowCheckout(false)}
+        formData={checkoutData}
+        setFormData={setCheckoutData}
+        loading={loading}
+        onContinue={handleCheckout}
+      />
     </div>
   );
 }
