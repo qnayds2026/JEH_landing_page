@@ -18,18 +18,18 @@ export default function CheckoutModal({
   };
 
   return (
-    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
-      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-4">
+      <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="bg-blue-600 px-6 py-5 text-white">
+        <div className="bg-blue-600 px-4 py-4 md:px-6 md:py-5 text-white">
           <button
             onClick={onClose}
-            className="absolute right-5 top-5 rounded-full bg-white/10 p-2 hover:bg-white/20"
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 transition hover:bg-white/20"
           >
             <X size={18} />
           </button>
 
-          <h2 className="text-2xl font-black">
+          <h2 className="text-xl md:text-2xl font-black">
             Complete Your Enrollment
           </h2>
 
@@ -39,9 +39,9 @@ export default function CheckoutModal({
         </div>
 
         {/* Body */}
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {/* Course Card */}
-          <div className="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5">
+          <div className="mb-4 rounded-2xl border border-blue-100 bg-blue-50 p-4">
             <h3 className="font-bold text-blue-950">
               30-Day Ethical Hacking Masterclass
             </h3>
@@ -52,19 +52,19 @@ export default function CheckoutModal({
                   ₹2,000
                 </p>
 
-                <p className="text-3xl font-black text-blue-600">
+                <p className="text-2xl md:text-3xl font-black text-blue-600">
                   ₹999
                 </p>
               </div>
 
-              <div className="rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700">
+              <div className="rounded-full bg-green-100 px-2.5 py-1 text-xs md:text-sm font-bold text-green-700">
                 Save ₹1001
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="relative">
               <User
                 size={18}
@@ -76,7 +76,7 @@ export default function CheckoutModal({
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 py-3 pl-11 pr-4 outline-none focus:border-blue-500"
+                className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500"
               />
             </div>
 
@@ -92,7 +92,7 @@ export default function CheckoutModal({
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 py-3 pl-11 pr-4 outline-none focus:border-blue-500"
+                className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500"
               />
             </div>
 
@@ -107,17 +107,17 @@ export default function CheckoutModal({
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 py-3 pl-11 pr-4 outline-none focus:border-blue-500"
+                className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500"
               />
             </div>
           </div>
 
           {/* Trust */}
-          <div className="mt-6 rounded-xl border border-green-100 bg-green-50 p-4">
+          <div className="mt-4 rounded-xl border border-green-100 bg-green-50 p-3">
             <div className="flex items-start gap-3">
               <ShieldCheck
                 size={20}
-                className="mt-0.5 text-green-600"
+                className="mt-0.5 shrink-0 text-green-600"
               />
 
               <div>
@@ -125,20 +125,19 @@ export default function CheckoutModal({
                   Secure Checkout
                 </h4>
 
-                <p className="text-sm text-green-600">
-                  You'll be redirected to Razorpay for a secure payment.
-                  After successful payment, an activation email will be sent
-                  to your registered email address.
+                <p className="mt-1 text-sm text-green-600">
+                  Secure payment via Razorpay. After payment, we'll send an
+                  activation email to your inbox.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex gap-3">
+          <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row">
             <button
               onClick={onClose}
-              className="flex-1 rounded-xl border border-slate-200 py-3 font-semibold hover:bg-slate-50"
+              className="flex-1 rounded-xl border border-slate-200 py-3 font-semibold transition hover:bg-slate-50"
             >
               Cancel
             </button>
@@ -146,7 +145,7 @@ export default function CheckoutModal({
             <button
               onClick={onContinue}
               disabled={loading}
-              className="flex-1 rounded-xl bg-blue-600 py-3 font-bold text-white hover:bg-blue-700 disabled:opacity-50"
+              className="flex-1 rounded-xl bg-blue-600 py-3 font-bold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? "Processing..." : "Continue to Payment"}
             </button>

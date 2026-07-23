@@ -1021,56 +1021,55 @@ export default function App() {
         </div>
       </section>
 
-{/* SECTION 9: 3-STEP PLAN */}
-<section className="py-12 px-6 max-w-5xl mx-auto">
-  <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10">
-    Start Learning in 3 Simple Steps
-  </h2>
+      {/* SECTION 9: 3-STEP PLAN */}
+      <section className="py-12 px-6 max-w-5xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10">
+          Start Learning in 3 Simple Steps
+        </h2>
 
-  <div className="grid md:grid-cols-3 gap-8 text-center relative">
-    {/* Connector Line */}
-    <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-blue-100 -z-10"></div>
+        <div className="grid md:grid-cols-3 gap-8 text-center relative">
+          {/* Connector Line */}
+          <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-blue-100 -z-10"></div>
 
-    {/* Step 1 */}
-    <div className="relative">
-      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-        1
-      </div>
-      <h3 className="font-bold text-blue-950 text-lg mb-2">
-        Register
-      </h3>
-      <p className="text-sm text-slate-600 font-medium">
-        Create your account and enroll in your preferred cybersecurity course.
-      </p>
-    </div>
+          {/* Step 1 */}
+          <div className="relative">
+            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+              1
+            </div>
+            <h3 className="font-bold text-blue-950 text-lg mb-2">Register</h3>
+            <p className="text-sm text-slate-600 font-medium">
+              Create your account and enroll in your preferred cybersecurity
+              course.
+            </p>
+          </div>
 
-    {/* Step 2 */}
-    <div className="relative">
-      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-        2
-      </div>
-      <h3 className="font-bold text-blue-950 text-lg mb-2">
-        Get Access
-      </h3>
-      <p className="text-sm text-slate-600 font-medium">
-        Receive instant access to recorded lessons, resources, and course materials.
-      </p>
-    </div>
+          {/* Step 2 */}
+          <div className="relative">
+            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+              2
+            </div>
+            <h3 className="font-bold text-blue-950 text-lg mb-2">Get Access</h3>
+            <p className="text-sm text-slate-600 font-medium">
+              Receive instant access to recorded lessons, resources, and course
+              materials.
+            </p>
+          </div>
 
-    {/* Step 3 */}
-    <div className="relative">
-      <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-        3
-      </div>
-      <h3 className="font-bold text-blue-950 text-lg mb-2">
-        Learn & Grow
-      </h3>
-      <p className="text-sm text-slate-600 font-medium">
-        Complete lessons, practice your skills, and build a strong cybersecurity career.
-      </p>
-    </div>
-  </div>
-</section>
+          {/* Step 3 */}
+          <div className="relative">
+            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
+              3
+            </div>
+            <h3 className="font-bold text-blue-950 text-lg mb-2">
+              Learn & Grow
+            </h3>
+            <p className="text-sm text-slate-600 font-medium">
+              Complete lessons, practice your skills, and build a strong
+              cybersecurity career.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 10: IMAGINE YOURSELF AFTER 30 DAYS (TRANSFORMATION) */}
       <section className="py-12 bg-blue-950 text-white px-6">
@@ -1504,7 +1503,13 @@ export default function App() {
           </div>
         </div>
         <button
-          onClick={() => handlePurchase("Mobile Sticky Bar")}
+          onClick={() => {
+            trackEvent("InitiateCheckout", {
+              button_location: "Hero Box",
+            });
+
+            setShowCheckout(true);
+          }}
           className="flex-1 bg-blue-600 text-white font-black py-3 px-2 rounded-xl active:scale-95 transition-transform shadow-lg shadow-blue-500/30 text-xs sm:text-sm text-center"
         >
           GET INSTANT ACCESS
