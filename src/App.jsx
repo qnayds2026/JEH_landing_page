@@ -41,6 +41,7 @@ import {
 import { FaWhatsapp, FaGoogle } from "react-icons/fa";
 import Intro from "./assets/Intro.MP4";
 import thumbnail from "./assets/thumbnail.webp";
+import CourseSyllabus from "./components/CourseSyllabus";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -887,6 +888,10 @@ export default function App() {
           </button>
           <CTATrustIndicators />
         </div>
+      </section>
+
+      <section>
+        <CourseSyllabus />
       </section>
 
       {/* SECTION 7: COURSE PLATFORM PREVIEW */}
