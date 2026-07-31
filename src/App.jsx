@@ -135,6 +135,10 @@ const FAQS = [
     a: "ഈ മാസ്റ്റർക്ലാസ് നിങ്ങളുടെ സൈബർ സെക്യൂരിറ്റി യാത്രയുടെ ശക്തമായ അടിത്തറയാണ് (Foundation). ഇതിന് ശേഷം നിങ്ങൾക്ക് Advanced ലെവൽ സർട്ടിഫിക്കേഷൻ കോഴ്സുകളിലേക്ക് കടക്കാം.",
   },
   {
+    q: "What laptop do I need for this course?",
+    a: "You can start with any laptop that has an Intel Core i3 (or equivalent), 4GB RAM, and at least 50GB of free storage. Windows 10/11, macOS, and Linux are supported. For a smoother experience while running Kali Linux and other security tools, 8GB RAM is recommended.",
+  },
+  {
     q: "Refund policy ഉണ്ടോ?",
     a: "This is a digital recorded course with instant access. Once access is provided, refunds cannot be issued. If you have any questions, please contact us on WhatsApp before enrolling.",
   },
