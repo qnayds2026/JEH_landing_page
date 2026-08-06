@@ -313,6 +313,19 @@ export default function App() {
     try {
       setLoading(true);
 
+      // Meta Advanced Matching
+      if (window.fbq) {
+        window.fbq("init", "1605940110959444", {
+          em: checkoutData.email,
+          ph: phone,
+        });
+
+        window.fbq("track", "InitiateCheckout", {
+          value: 999,
+          currency: "INR",
+        });
+      }
+
       const { data } = await axios.post(`${API_URL}/landing/create-order`, {
         name: checkoutData.name,
         email: checkoutData.email,
@@ -369,6 +382,13 @@ export default function App() {
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           });
+
+          if (window.fbq) {
+            window.fbq("track", "Purchase", {
+              value: 999,
+              currency: "INR",
+            });
+          }
 
           alert(
             "Payment successful! Please check your email to activate your account.",
