@@ -37,6 +37,9 @@ import {
   MonitorPlay,
   ExternalLink,
   ArrowRightCircle,
+  CreditCard,
+  MailCheck,
+  GraduationCap,
 } from "lucide-react";
 import { FaWhatsapp, FaGoogle } from "react-icons/fa";
 import Intro from "./assets/Intro.MP4";
@@ -1051,51 +1054,129 @@ export default function App() {
       </section>
 
       {/* SECTION 9: 3-STEP PLAN */}
-      <section className="py-12 px-6 max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10">
-          Start Learning in 3 Simple Steps
-        </h2>
+      <section className="py-24 bg-linear-to-b from-slate-50 via-white to-blue-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center px-5 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
+              🚀 How It Works
+            </span>
 
-        <div className="grid md:grid-cols-3 gap-8 text-center relative">
-          {/* Connector Line */}
-          <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-blue-100 -z-10"></div>
+            <h2 className="mt-5 text-4xl md:text-5xl font-black text-blue-950">
+              Your Journey After
+              <span className="text-blue-600"> Enrollment</span>
+            </h2>
 
-          {/* Step 1 */}
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              1
-            </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">Register</h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Create your account and enroll in your preferred cybersecurity
-              course.
+            <p className="mt-5 text-lg text-slate-600">
+              Everything happens automatically. From payment to accessing your
+              course, the process takes only a few minutes.
             </p>
           </div>
 
-          {/* Step 2 */}
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              2
+          {/* Timeline */}
+          <div className="relative mt-20">
+            {/* Desktop line */}
+            <div className="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-blue-100 rounded-full">
+              <div className="absolute left-0 top-0 h-full w-full bg-linear-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full opacity-20"></div>
             </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">Get Access</h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Receive instant access to recorded lessons, resources, and course
-              materials.
-            </p>
-          </div>
 
-          {/* Step 3 */}
-          <div className="relative">
-            <div className="w-16 h-16 mx-auto bg-blue-600 text-white font-black text-2xl rounded-full flex items-center justify-center mb-4 shadow-lg ring-8 ring-white">
-              3
+            <div className="grid lg:grid-cols-3 gap-10">
+              {/* STEP 1 */}
+              <div className="relative">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-xl">
+                  <CreditCard size={28} />
+                </div>
+
+                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-blue-100 shadow-xl p-8">
+                  <span className="text-xs font-bold tracking-widest text-blue-600">
+                    STEP 01
+                  </span>
+
+                  <h3 className="mt-3 text-2xl font-black text-blue-950">
+                    Complete Payment
+                  </h3>
+
+                  <p className="mt-4 text-slate-600 leading-7">
+                    Securely complete your payment through Razorpay using UPI,
+                    Cards or Net Banking.
+                  </p>
+
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
+                      ⏱ Takes 2 Minutes
+                    </span>
+
+                    <span className="text-4xl font-black text-blue-100">
+                      01
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* STEP 2 */}
+              <div className="relative">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-emerald-500 to-green-600 text-white flex items-center justify-center shadow-xl">
+                  <MailCheck size={28} />
+                </div>
+
+                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-100 shadow-xl p-8">
+                  <span className="text-xs font-bold tracking-widest text-emerald-600">
+                    STEP 02
+                  </span>
+
+                  <h3 className="mt-3 text-2xl font-black text-blue-950">
+                    Activate Account
+                  </h3>
+
+                  <p className="mt-4 text-slate-600 leading-7">
+                    We'll instantly send an activation email. Create your
+                    password and log into the LMS.
+                  </p>
+
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">
+                      📧 Instant Email
+                    </span>
+
+                    <span className="text-4xl font-black text-emerald-100">
+                      02
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* STEP 3 */}
+              <div className="relative">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-purple-600 to-pink-600 text-white flex items-center justify-center shadow-xl">
+                  <GraduationCap size={28} />
+                </div>
+
+                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-purple-100 shadow-xl p-8">
+                  <span className="text-xs font-bold tracking-widest text-purple-600">
+                    STEP 03
+                  </span>
+
+                  <h3 className="mt-3 text-2xl font-black text-blue-950">
+                    Start Learning
+                  </h3>
+
+                  <p className="mt-4 text-slate-600 leading-7">
+                    Access your recorded classes, practical labs and WhatsApp
+                    community instantly.
+                  </p>
+
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
+                      🎉 Lifetime Access
+                    </span>
+
+                    <span className="text-4xl font-black text-purple-100">
+                      03
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 className="font-bold text-blue-950 text-lg mb-2">
-              Learn & Grow
-            </h3>
-            <p className="text-sm text-slate-600 font-medium">
-              Complete lessons, practice your skills, and build a strong
-              cybersecurity career.
-            </p>
           </div>
         </div>
       </section>
