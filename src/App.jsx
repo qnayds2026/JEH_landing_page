@@ -644,14 +644,14 @@ export default function App() {
           <StickyTrustBar />
 
           {/* INTRO VIDEO */}
-          <div className="max-w-sm md:max-w-md lg:max-w-lg mx-auto mt-8 mb-8">
+          <div className="w-full max-w-xs md:max-w-sm mx-auto mt-8 mb-8">
             <p className="text-center text-blue-600 font-bold uppercase tracking-wider mb-4">
               🎥 WATCH BEFORE YOU ENROLL
             </p>
 
             <div className="rounded-3xl overflow-hidden border border-blue-100 shadow-2xl bg-black">
               <video
-                className="w-full max-h-125 md:max-h-150 object-contain rounded-3xl"
+                className="block w-full h-auto object-contain"
                 controls
                 playsInline
                 preload="metadata"
