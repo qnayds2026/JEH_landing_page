@@ -87,7 +87,7 @@ export default function CourseSyllabus() {
           </span>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950">
-            നിങ്ങൾ എന്തെല്ലാം പഠിക്കും (30 ദിവസത്തെ ലേണിംഗ് റോഡ്‌മാപ്പ്)
+            നിങ്ങൾ എന്തെല്ലാം പഠിക്കും
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
