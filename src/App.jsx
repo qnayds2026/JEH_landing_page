@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import QnaydsLOgo from "../src/assets/QNAYDS_LOGO.png";
 import Alan_sir from "../src/assets/Alan_sir.webp";
 import CheckoutModal from "./components/CheckoutModal";
@@ -8,40 +8,14 @@ import {
   Star,
   ChevronDown,
   ChevronUp,
-  Shield,
-  Wifi,
   UserX,
-  Smartphone,
-  Camera,
-  Bluetooth,
-  Cpu,
-  Lock,
   ArrowRight,
-  Clock,
-  MessageCircle,
-  AlertCircle,
-  Award,
-  Briefcase,
-  Check,
-  X,
   Users,
-  BookOpen,
-  ShieldCheck,
   ThumbsUp,
-  HeartHandshake,
   Download,
-  Trophy,
   XCircle,
-  LayoutDashboard,
-  TrendingUp,
-  MonitorPlay,
-  ExternalLink,
-  ArrowRightCircle,
-  CreditCard,
-  MailCheck,
-  GraduationCap,
 } from "lucide-react";
-import { FaWhatsapp, FaGoogle } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import Intro from "./assets/Intro.MP4";
 import thumbnail from "./assets/thumbnail.webp";
 import CourseSyllabus from "./components/CourseSyllabus";
@@ -51,78 +25,80 @@ const API_URL = import.meta.env.VITE_API_URL;
 const COURSE_ID = import.meta.env.VITE_COURSE_ID;
 const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY;
 
-// A/B Testing Constant for Primary CTA
-const PRIMARY_CTA_TEXT = "START LEARNING ETHICAL HACKING TODAY";
-
-const GOOGLE_REVIEW_URL =
-  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LC4oL8ozK88yYLRSNagwTko0T01LTk60SDZKM0pMszKoSEoxNbawsDRPskgxNzYxSfJiK8xLrEwpBgBZoBMV&q=qnayds&rlz=1CDGOYI_enIN1209IN1210&oq=qnayds&gs_lcrp=EgZjaHJvbWUqEggFEC4YJxivARjHARi6AhiOBTIGCAAQRRg8MgYIARBFGDwyBggCEEUYPDIGCAMQRRg8MgYIBBBFGDwyEggFEC4YJxivARjHARi6AhiOBTIGCAYQRRg7MgkIBxBFGDsYgAQyCQgIEEUYOxiABDIHCAkQABiABNIBCDIwMDFqMGo3qAIasAIB4gMEGAEgX_EFMiM1YNrxwWTxBTIjNWDa8cFk&hl=en-GB&sourceid=chrome-mobile&ie=UTF-8#ebo=0&mpd=~3379620392164112321/customers/reviews"; //
-
-const OFFER_HOURS = 5;
-const OFFER_MINS = 42;
-const OFFER_SECS = 18;
-
-// Updated Video Arrays with Descriptions in Malayalam
+// Real Malayalam Student Videos
 const ALL_VIDEOS = [
   {
     id: "dSWuXMFdOaQ",
+    name: "Fukri",
+    role: "CEO, Fukri Smart Solutions",
     desc: "Fukri Smart Solutions CEO ഫുക്രിയുടെ അനുഭവം. അദ്ദേഹം ഈ കോഴ്‌സ് സുഹൃത്തിന് നിർദ്ദേശിക്കുകയും പിന്നീട് ഇതിലെ ക്വാളിറ്റി കണ്ട് സ്വയം ജോയിൻ ചെയ്യുകയും ചെയ്തു.",
   },
   {
     id: "oO2m4N7rkjc",
-    desc: "ഹാക്കിങ് പഠിക്കാൻ ആഗ്രഹിക്കുന്ന തുടക്കക്കാർക്ക് ഏറ്റവും മികച്ച കോഴ്‌സ് ആണിതെന്ന് വിദ്യാർത്ഥി പറയുന്നു.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
+    desc: "ഹാക്കിങ് പഠിക്കാൻ ആഗ്രഹിക്കുന്ന തുടക്കക്കാർക്ക് ഏറ്റവും മികച്ച കോഴ്‌സ് ആണിതെന്ന് വിദ്യാർത്ഥി സാക്ഷ്യപ്പെടുത്തുന്നു.",
   },
   {
     id: "vILn-_i2n5U",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
     desc: "സങ്കീർണ്ണമായ സൈബർ സെക്യൂരിറ്റി വിഷയങ്ങൾ പോലും വളരെ ലളിതമായി മലയാളത്തിൽ മനസ്സിലാക്കിത്തരുന്നു.",
   },
   {
     id: "mcGd31D19Xo",
-    desc: "റെക്കോർഡഡ് ക്ലാസ്സുകൾ ആയതിനാൽ സ്വന്തം സമയത്ത് ജോലിക്ക് ഒപ്പം പഠിക്കാൻ സാധിച്ചതിന്റെ അനുഭവം.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Working Professional",
+    desc: "റെക്കോർഡഡ് ക്ലാസ്സുകൾ ആയതിനാൽ സ്വന്തം ഒഴിവുസമയത്ത് ജോലിക്ക് ഒപ്പം കണ്ട് പഠിക്കാൻ സാധിച്ചതിന്റെ അനുഭവം.",
   },
   {
     id: "U-9r2GyKZ0s",
-    desc: "Whatsapp ഗ്രൂപ്പിലൂടെ ലഭിക്കുന്ന മികച്ച സപ്പോർട്ട് വളരെ സഹായകമായി എന്ന് വിദ്യാർത്ഥി സാക്ഷ്യപ്പെടുത്തുന്നു.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
+    desc: "WhatsApp ഗ്രൂപ്പിലൂടെ ലഭിക്കുന്ന വേഗത്തിലുള്ള സംശയനിവാരണം വളരെ സഹായകമായി എന്ന് വിദ്യാർത്ഥി സാക്ഷ്യപ്പെടുത്തുന്നു.",
   },
   {
     id: "XflR50c2TvA",
-    desc: "സൈബർ ലോകത്തെ പുതിയ കാര്യങ്ങൾ പ്രാക്ടിക്കൽ ആയി പഠിക്കാൻ ഈ കോഴ്‌സ് ഏറെ സഹായിച്ചു.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
+    desc: "സൈബർ ലോകത്തെ പുതിയ കാര്യങ്ങൾ തിയറി മാത്രമല്ല, പ്രാക്ടിക്കൽ ആയി മനസ്സിലാക്കാൻ ഈ കോഴ്‌സ് ഏറെ സഹായിച്ചു.",
   },
   {
     id: "TZmmOn7nkfE",
-    desc: "വളരെ കുറഞ്ഞ ഫീസിൽ ഇത്രയും മികച്ചൊരു കോഴ്‌സ് നൽകുന്നതിന് QNAYDS അക്കാദമിക്ക് നന്ദി.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
+    desc: "വളരെ കുറഞ്ഞ ഫീസിൽ ഇത്രയും മൂല്യവത്തായ ഒരു കോഴ്‌സ് നൽകുന്നതിന് QNAYDS അക്കാദമിക്ക് നന്ദി.",
   },
   {
     id: "9_Q4-pjZbn0",
-    desc: "എല്ലാ ക്ലാസ്സുകളും വ്യക്തവും ലളിതവുമാണ്. താല്പര്യമുള്ള എല്ലാവർക്കും ധൈര്യമായി ജോയിൻ ചെയ്യാം.",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Student",
+    desc: "എല്ലാ ക്ലാസ്സുകളും വ്യക്തവും ലളിതവുമാണ്. താല്പര്യമുള്ള ഏതൊരു തുടക്കക്കാരനും ധൈര്യമായി ജോയിൻ ചെയ്യാം.",
   },
   {
     id: "Qi05xOMa2m4",
+    name: "വിദ്യാർത്ഥി അനുഭവം",
+    role: "Beginner",
     desc: "മുൻപരിചയം ഇല്ലാത്തവർക്കും എളുപ്പത്തിൽ മനസ്സിലാകുന്ന രീതിയിലാണ് ക്ലാസ്സുകൾ ഡിസൈൻ ചെയ്തിരിക്കുന്നത്.",
   },
 ];
 
-const SYLLABUS = [
-  { title: "Ethical Hacking Fundamentals", icon: Shield },
-  { title: "Wi-Fi Security Concepts", icon: Wifi },
-  { title: "Social Engineering", icon: UserX },
-  { title: "Phishing Defence", icon: Lock },
-  { title: "Smartphone Security", icon: Smartphone },
-  { title: "Camera & CCTV Security", icon: Camera },
-  { title: "Bluetooth Security", icon: Bluetooth },
-  { title: "AI in Cybersecurity", icon: Cpu },
-];
-
+// Curated FAQs with Refund Answer open by default
 const FAQS = [
   {
-    q: "എനിക്ക് hacking-ൽ മുൻപരിചയം വേണോ?",
-    a: "വേണ്ട. തികച്ചും Beginners-നെ പരിഗണിച്ചാണ് ഈ കോഴ്‌സ് തയ്യാറാക്കിയിരിക്കുന്നത്. അടിസ്ഥാന കാര്യങ്ങളിൽ നിന്ന് തുടങ്ങി നിങ്ങളെ പടിപടിയായി പഠിപ്പിക്കുന്നു.",
+    q: "Refund policy ഉണ്ടോ?",
+    a: "ഇത് ഉടൻ ആക്സസ് ലഭിക്കുന്ന ഡിജിറ്റൽ റെക്കോർഡ് കോഴ്സ് ആയതിനാൽ, ആക്സസ് നൽകിയ ശേഷം റീഫണ്ട് നൽകാൻ കഴിയില്ല. ചേരുന്നതിന് മുമ്പ് ഏത് സംശയവും WhatsApp-ൽ ചോദിക്കാം.",
   },
   {
-    q: "Classes live ആണോ? എപ്പോൾ കാണാം?",
-    a: "അല്ല, ഇത് Fully Recorded സെഷനുകളാണ്. നിങ്ങളുടെ സ്വന്തം സമയക്രമം അനുസരിച്ച്, ഒഴിവുസമയങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും ക്ലാസ്സുകൾ കാണാനും പഠിക്കാനും സാധിക്കും.",
+    q: "ഹാക്കിംഗിൽ മുൻപരിചയം വേണമെന്നുണ്ടോ?",
+    a: "വേണ്ട. തികച്ചും തുടക്കക്കാരെ (Beginners) ലക്ഷ്യമിട്ടാണ് ഈ കോഴ്‌സ് തയ്യാറാക്കിയിരിക്കുന്നത്. അടിസ്ഥാന കാര്യങ്ങളിൽ നിന്ന് തുടങ്ങി നിങ്ങളെ പടിപടിയായി പഠിപ്പിക്കുന്നു.",
   },
   {
-    q: "ലാൻഡ്‌ടോപ്പ് നിർബന്ധമാണോ അതോ ഫോണിൽ പഠിക്കാമോ?",
+    q: "ക്ലാസുകൾ ലൈവ് ആണോ? എപ്പോഴാണ് കാണാൻ സാധിക്കുക?",
+    a: "അല്ല, ഇത് 100% റെക്കോർഡഡ് സെഷനുകളാണ് (Lifetime Access). നിങ്ങളുടെ സ്വന്തം സമയക്രമം അനുസരിച്ച്, ഒഴിവുസമയങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും ക്ലാസ്സുകൾ കാണാനും പഠിക്കാനും സാധിക്കും.",
+  },
+  {
+    q: "ലാപ്‌ടോപ്പ് നിർബന്ധമാണോ അതോ ഫോണിൽ പഠിക്കാമോ?",
     a: "തുടക്കത്തിൽ ക്ലാസ്സുകൾ മനസ്സിലാക്കാൻ സ്മാർട്ട്‌ഫോൺ മതിയാകും. എന്നാൽ പ്രാക്ടിക്കൽ ആയി ചെയ്തുപഠിക്കാൻ ഒരു ബേസിക് ലാപ്ടോപ്പ് ഉണ്ടാവുന്നത് വളരെ നല്ലതാണ്.",
   },
   {
@@ -130,64 +106,96 @@ const FAQS = [
     a: "നിങ്ങൾക്ക് ലഭിക്കുന്ന പ്രത്യേക WhatsApp ഗ്രൂപ്പ് വഴി സംശയങ്ങൾ ചോദിക്കാനും പരിഹരിക്കാനും സാധിക്കും.",
   },
   {
-    q: "How much time should I spend daily?",
+    q: "ദിവസവും എത്ര സമയം ഇതിനായി മാറ്റിവെക്കണം?",
     a: "ദിവസവും 30 മുതൽ 45 മിനിറ്റ് വരെ മാറ്റിവെക്കുന്നത് വളരെ നല്ലതാണ്. എന്നാൽ ഇത് പൂർണ്ണമായും Recorded ആയതിനാൽ നിങ്ങൾക്ക് നിങ്ങളുടെ സമയത്തിനനുസരിച്ച് പഠിക്കാൻ സാധിക്കും.",
   },
   {
-    q: "What should I do after completing this course?",
+    q: "കോഴ്സ് പൂർത്തിയാക്കുമ്പോൾ സർട്ടിഫിക്കറ്റ് ലഭിക്കുമോ?",
+    a: "അതെ, മാസ്റ്റർക്ലാസ് പൂർത്തിയാക്കുന്നവർക്ക് വെരിഫൈഡ് കോഴ്സ് സർട്ടിഫിക്കറ്റ് ലഭിക്കുന്നതാണ്.",
+  },
+  {
+    q: "ഈ കോഴ്സിന് ശേഷം എന്ത് ചെയ്യാം?",
     a: "ഈ മാസ്റ്റർക്ലാസ് നിങ്ങളുടെ സൈബർ സെക്യൂരിറ്റി യാത്രയുടെ ശക്തമായ അടിത്തറയാണ് (Foundation). ഇതിന് ശേഷം നിങ്ങൾക്ക് Advanced ലെവൽ സർട്ടിഫിക്കേഷൻ കോഴ്സുകളിലേക്ക് കടക്കാം.",
   },
-  {
-    q: "What laptop do I need for this course?",
-    a: "You can start with any laptop that has an Intel Core i3 (or equivalent), 4GB RAM, and at least 50GB of free storage. Windows 10/11, macOS, and Linux are supported. For a smoother experience while running Kali Linux and other security tools, 8GB RAM is recommended.",
-  },
-  {
-    q: "Refund policy ഉണ്ടോ?",
-    a: "This is a digital recorded course with instant access. Once access is provided, refunds cannot be issued. If you have any questions, please contact us on WhatsApp before enrolling.",
-  },
 ];
 
-// Mock Data for Sales Notifications
-const BUYER_NAMES = [
-  "Rahul M.",
-  "Sneha T.",
-  "Akhil P.",
-  "Vishnu Das",
-  "Kavya K.",
-  "Ajay S.",
-  "Meera V.",
-  "Fasil K.",
-  "Jithin C.",
-  "Anjali R.",
-];
-const BUYER_LOCATIONS = [
-  "Kochi",
-  "Trivandrum",
-  "Kozhikode",
-  "Thrissur",
-  "Malappuram",
-  "Kannur",
-  "Kollam",
-  "Palakkad",
-  "Kottayam",
-  "Alappuzha",
-];
-const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-const getRandomTime = () => Math.floor(Math.random() * 59) + 1;
+// Section 2: Every blue button trust text
+function ButtonTrustIndicators() {
+  return (
+    <div className="flex justify-center items-center gap-2 md:gap-3 mt-2.5 text-[11px] md:text-xs font-semibold text-slate-500 flex-wrap text-center">
+      <span>ഉടൻ ആക്സസ്</span>
+      <span>•</span>
+      <span>സുരക്ഷിത പേയ്മെന്റ്</span>
+      <span>•</span>
+      <span>സ്വന്തം വേഗത്തിൽ പഠിക്കാം</span>
+      <span>•</span>
+      <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+    </div>
+  );
+}
 
-// --- COMPONENTS ---
+function VideoCard({ video, activeVideoId, onPlay, onClose }) {
+  return (
+    <div className="w-full max-w-sm mx-auto bg-white rounded-2xl border border-blue-100 overflow-hidden shadow-lg shadow-blue-900/5 mb-6 flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div
+        className="w-full h-112 md:h-128 relative cursor-pointer bg-slate-950"
+        onClick={onPlay}
+      >
+        {activeVideoId === video.id ? (
+          <>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+              className="absolute top-3 right-3 z-30 bg-black/80 text-white px-3 py-1.5 rounded-full text-xs font-bold hover:bg-black transition cursor-pointer"
+            >
+              ✕ Close
+            </button>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
+              title="Student Review"
+              className="w-full h-full border-0 absolute inset-0 z-10"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </>
+        ) : (
+          <>
+            <img
+              src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+              alt="Student Review"
+              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity absolute inset-0"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/40">
+                <Play size={26} className="ml-1 fill-white" />
+              </div>
+            </div>
+            <div className="absolute bottom-4 left-4 right-4 text-center z-10">
+              <span className="bg-white/95 text-blue-950 font-black text-xs px-3.5 py-1.5 rounded-full shadow-md">
+                ▶ {video.name} • {video.role}
+              </span>
+            </div>
+          </>
+        )}
+      </div>
+      <div className="p-4 text-center bg-blue-50/40 border-t border-blue-100 grow flex items-center justify-center">
+        <p className="text-xs md:text-sm text-slate-800 font-medium leading-relaxed">
+          "{video.desc}"
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
-  const [activeFaq, setActiveFaq] = useState(null);
+  // Refund FAQ is open by default as requested in PDF Section 2 & 3
+  const [activeFaq, setActiveFaq] = useState(0);
   const [activeVideoId, setActiveVideoId] = useState(null);
   const [showAllVideos, setShowAllVideos] = useState(false);
-  const [leadCaptured, setLeadCaptured] = useState(false);
-  const [notification, setNotification] = useState({
-    show: false,
-    name: "",
-    location: "",
-    time: "",
-  });
   const [showCheckout, setShowCheckout] = useState(false);
 
   const [checkoutData, setCheckoutData] = useState({
@@ -198,7 +206,7 @@ export default function App() {
 
   const [loading, setLoading] = useState(false);
 
-  // Custom Event Tracker for Meta Pixel
+  // Meta Pixel Tracker
   const trackEvent = (eventName, params = {}) => {
     if (typeof window !== "undefined") {
       if (window.fbq) {
@@ -209,10 +217,9 @@ export default function App() {
     }
   };
 
-  // SEO, Initial Pixels, Scroll Tracking & Notification Timer
   useEffect(() => {
     document.title =
-      "30-Day Ethical Hacking Masterclass in Malayalam | QNAYDS Academy";
+      "30-Day Ethical Hacking Masterclass | QNAYDS Academy";
     trackEvent("ViewContent");
 
     // Scroll Tracking
@@ -220,6 +227,7 @@ export default function App() {
       scrolled50 = false,
       scrolled75 = false,
       scrolled100 = false;
+
     const handleScroll = () => {
       const scrollPercent =
         (window.scrollY /
@@ -242,48 +250,12 @@ export default function App() {
         trackEvent("ScrollDepth", { depth: "100%" });
       }
     };
+
     window.addEventListener("scroll", handleScroll);
-
-    // Sales Notification Logic
-    let isMounted = true;
-    const triggerNotification = () => {
-      if (!isMounted || activeVideoId) return;
-
-      setNotification({
-        show: true,
-        name: getRandomElement(BUYER_NAMES),
-        location: getRandomElement(BUYER_LOCATIONS),
-        time: `${getRandomTime()} mins ago`,
-      });
-      setTimeout(() => {
-        if (isMounted) setNotification((prev) => ({ ...prev, show: false }));
-      }, 5000);
-    };
-
-    const initialTimeout = setTimeout(triggerNotification, 5000);
-    const interval = setInterval(triggerNotification, 20000);
-
-    return () => {
-      isMounted = false;
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [activeVideoId]);
-
-  const getCheckoutUrl = () => {
-    const baseUrl =
-      "https://qnayds.akamai.net.in/new-courses/7-30-days-hacking-course?activeTab=content";
-    if (typeof window !== "undefined") {
-      const urlParams = new URLSearchParams(window.location.search);
-      const utmString = urlParams.toString();
-      return utmString ? `${baseUrl}&${utmString}` : baseUrl;
-    }
-    return baseUrl;
-  };
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleCheckout = async () => {
-    // Validation
     if (!checkoutData.name.trim()) {
       alert("Please enter your full name.");
       return;
@@ -295,7 +267,6 @@ export default function App() {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!emailRegex.test(checkoutData.email)) {
       alert("Please enter a valid email address.");
       return;
@@ -307,7 +278,6 @@ export default function App() {
     }
 
     const phone = checkoutData.phone.replace(/\D/g, "");
-
     if (phone.length !== 10) {
       alert("Please enter a valid 10-digit mobile number.");
       return;
@@ -316,7 +286,6 @@ export default function App() {
     try {
       setLoading(true);
 
-      // Meta Advanced Matching
       if (window.fbq) {
         window.fbq("init", "1605940110959444", {
           em: checkoutData.email,
@@ -337,16 +306,11 @@ export default function App() {
       });
 
       setLoading(false);
-
-      // Close the modal before opening Razorpay
       setShowCheckout(false);
-
       openRazorpay(data.data);
     } catch (error) {
       console.error(error);
-
       setLoading(false);
-
       alert(
         error.response?.data?.message ||
           "Unable to create your order. Please try again.",
@@ -356,28 +320,20 @@ export default function App() {
 
   const openRazorpay = (paymentData) => {
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY,
-
+      key: RAZORPAY_KEY || import.meta.env.VITE_RAZORPAY_KEY,
       amount: paymentData.order.amount,
-
       currency: paymentData.order.currency,
-
       name: "QNAYDS Academy",
-
       description: paymentData.course.title,
-
       order_id: paymentData.order.id,
-
       prefill: {
         name: paymentData.student.name,
         email: paymentData.student.email,
         contact: checkoutData.phone,
       },
-
       theme: {
         color: "#2563eb",
       },
-
       handler: async function (response) {
         try {
           await axios.post(`${API_URL}/payments/verify`, {
@@ -398,7 +354,6 @@ export default function App() {
           );
         } catch (error) {
           console.error(error);
-
           alert(
             error.response?.data?.message || "Payment verification failed.",
           );
@@ -412,1108 +367,367 @@ export default function App() {
     };
 
     const razorpay = new window.Razorpay(options);
-
     razorpay.open();
   };
 
   const handleWhatsAppContact = (context = "Floating Button") => {
     trackEvent("WhatsApp_Click", { context });
-
     const message =
       "Hi QNAYDS Team, I would like to know more about the 30-Day Ethical Hacking Masterclass.";
-
     window.open(
       `https://wa.me/919074871204?text=${encodeURIComponent(message)}`,
       "_blank",
     );
   };
 
-  const handleLeadCapture = (e, method) => {
-    e.preventDefault();
-    setLeadCaptured(true);
-    trackEvent("Lead_Magnet_Download", { method });
-    if (method === "WhatsApp") {
-      window.open(
-        "https://wa.me/919074871204?text=Hi%2C%20please%20send%20me%20the%20Free%20Ethical%20Hacking%20Starter%20Kit.",
-        "_blank",
-      );
-    }
+  const handleLeadCapture = () => {
+    trackEvent("Lead_Magnet_Download", { method: "WhatsApp" });
+    window.open(
+      "https://wa.me/919074871204?text=Hi%2C%20please%20send%20me%20the%20Free%20Ethical%20Hacking%20Starter%20Kit.",
+      "_blank",
+    );
   };
 
-  const CTATrustIndicators = () => (
-    <div className="flex justify-center items-center gap-3 md:gap-4 mt-3 text-[11px] md:text-xs font-bold text-slate-500 flex-wrap">
-      <span className="flex items-center gap-1">
-        <CheckCircle2 size={12} className="text-blue-500" /> Instant Access
-      </span>
-      <span className="flex items-center gap-1">
-        <Lock size={12} className="text-blue-500" /> Secure Payment
-      </span>
-      <span className="flex items-center gap-1">
-        <Clock size={12} className="text-blue-500" /> Learn at Your Own Pace
-      </span>
-      <span className="flex items-center gap-1">
-        <Shield size={12} className="text-blue-500" /> Beginner Friendly
-      </span>
-    </div>
-  );
-
-  const StickyTrustBar = () => (
-    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 mb-2 max-w-4xl mx-auto">
-      <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 text-xs font-bold shadow-sm">
-        <Star className="text-amber-400 fill-amber-400" size={14} /> 4.6 Google
-        Rating
-      </div>
-      <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 text-xs font-bold shadow-sm">
-        <Users className="text-blue-500" size={14} /> 10,000+ Students
-      </div>
-      <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 text-xs font-bold shadow-sm">
-        <FaWhatsapp className="text-green-500" size={14} /> WhatsApp Support
-      </div>
-    </div>
-  );
-
-  const VideoCard = ({ video }) => (
-    <div className="w-full max-w-sm mx-auto bg-white rounded-2xl border border-blue-100 overflow-hidden shadow-xl shadow-blue-900/10 mb-6 flex flex-col group transition-transform hover:-translate-y-1">
-      <div
-        className="w-full h-137.5 relative cursor-pointer bg-slate-900"
-        onClick={() => {
-          setNotification((prev) => ({ ...prev, show: false }));
-          setActiveVideoId(video.id);
-          trackEvent("Video_Play", { video_id: video.id });
-        }}
-      >
-        {activeVideoId === video.id ? (
-          <>
-            <button
-              onClick={(e) => setActiveVideoId(null)}
-              className="absolute top-2 right-2 z-20 bg-black/70 text-white px-2 py-1 rounded"
-            >
-              ✕
-            </button>
-
-            <iframe
-              src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
-              title="Student Review"
-              className="w-full h-full border-0 absolute inset-0 z-10"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </>
-        ) : (
-          <>
-            <img
-              src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
-              alt="Student Review Thumbnail"
-              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity absolute inset-0"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-blue-950/90 via-blue-900/20 to-transparent"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 bg-blue-600/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">
-                <Play size={28} className="ml-1" fill="currentColor" />
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-4 right-4 text-center z-10">
-              <span className="bg-white/95 text-blue-950 font-bold text-xs px-3 py-1.5 rounded-full shadow-lg">
-                QNAYDS Student Review
-              </span>
-            </div>
-          </>
-        )}
-      </div>
-      <div className="p-4 text-center bg-blue-50/50 border-t border-blue-100 grow flex items-center justify-center">
-        <p className="text-sm text-blue-950 font-medium leading-relaxed">
-          {video.desc}
-        </p>
-      </div>
-    </div>
-  );
+  const triggerCheckout = (location) => {
+    trackEvent("InitiateCheckout", { button_location: location });
+    setShowCheckout(true);
+  };
 
   const visibleVideos = showAllVideos ? ALL_VIDEOS : ALL_VIDEOS.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-500/20 overflow-x-hidden">
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
-        
-        body { font-family: 'Poppins', sans-serif; }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Poppins', 'Noto Sans Malayalam', sans-serif; }
         @keyframes pulse-btn {
-          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-          50% { transform: scale(1.02); box-shadow: 0 0 20px 0 rgba(37, 99, 235, 0.6); }
-          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-        }
-        @keyframes blink-text {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
+          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45); }
+          50% { transform: scale(1.02); box-shadow: 0 0 25px 4px rgba(37, 99, 235, 0.6); }
+          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45); }
         }
         .animate-pulse-btn {
-          animation: pulse-btn 2s infinite ease-in-out;
+          animation: pulse-btn 2.2s infinite ease-in-out;
         }
-        .animate-blink {
-          animation: blink-text 1.5s infinite ease-in-out;
-        }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
         .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
       `,
         }}
       />
 
-      {/* FLOATING WHATSAPP BUTTON */}
+      {/* SECTION 2 ITEM 10: WHATSAPP BUTTON WITH SHORT LABEL */}
       <button
         onClick={() => handleWhatsAppContact("Floating Icon")}
-        className="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-100 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center cursor-pointer"
+        className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-90 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer border-2 border-white/60"
         aria-label="Contact on WhatsApp"
       >
-        <FaWhatsapp size={32} />
+        <FaWhatsapp size={24} />
+        <span className="text-xs md:text-sm font-bold whitespace-nowrap">
+          സംശയമുണ്ടോ? WhatsApp-ൽ ചോദിക്കൂ
+        </span>
       </button>
 
-      {/* SALES NOTIFICATION POPUP (SOCIAL PROOF) */}
-      <div
-        className={`fixed bottom-24 md:bottom-8 left-4 md:left-8 z-90 bg-white border border-blue-100 rounded-xl shadow-2xl p-3 flex items-center gap-3 max-w-70 md:max-w-[320px] transition-all duration-500 ease-in-out transform ${notification.show ? "translate-x-0 opacity-100" : "translate-x-[150%] opacity-0"}`}
-      >
-        <div className="bg-green-100 p-2.5 rounded-full text-green-600 shrink-0 shadow-sm">
-          <CheckCircle2 size={24} />
-        </div>
-        <div className="flex-1 min-w-0 pr-4">
-          <p className="text-[11px] font-bold text-slate-400 mb-0.5 uppercase tracking-wide">
-            {notification.name} from {notification.location}
-          </p>
-          <p className="text-sm font-bold text-blue-950 leading-tight">
-            Purchased the Masterclass
-          </p>
-          <p className="text-[10px] text-blue-500 mt-1 font-semibold flex items-center gap-1">
-            <Clock size={10} /> {notification.time}
-          </p>
-        </div>
-        <button
-          onClick={() => setNotification((prev) => ({ ...prev, show: false }))}
-          className="absolute -top-2 -right-2 bg-white border border-slate-200 rounded-full p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-50 shadow-sm transition-colors"
-          aria-label="Close notification"
-        >
-          <X size={14} />
-        </button>
-      </div>
-
-      {/* SECTION 1: OFFER BAR */}
-      <div className="sticky top-0 z-50 bg-blue-600 text-white font-bold px-4 py-3 text-center text-sm flex flex-col md:flex-row items-center justify-center gap-2 shadow-lg">
-        <span className="flex items-center justify-center gap-2">
-          <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-md animate-blink">
-            🔥
-          </span>
-          SPECIAL LAUNCH OFFER:{" "}
-          <span className="line-through opacity-70 ml-1">₹2,000</span> COURSE
-          NOW AT ₹999
-        </span>
+      {/* SECTION 2 ITEM 1: TOP BANNER */}
+      <div className="sticky top-0 z-50 bg-blue-600 text-white font-bold px-3 py-2.5 text-center text-xs md:text-sm shadow-md">
+        ലോഞ്ച് ഓഫർ: ₹2,000-ന്റെ കോഴ്സ് ഇപ്പോൾ ₹999 മാത്രം
       </div>
 
       {/* HEADER LOGO */}
-      <header className="bg-white py-5 px-6 flex justify-center border-b border-blue-100 shadow-sm relative z-40">
-        <img
-          src={QnaydsLOgo}
-          alt="QNAYDS Academy Logo"
-          className="h-20 md:h-24 w-auto object-contain transition-transform hover:scale-105"
-        />
+      <header className="bg-white py-4 px-6 border-b border-blue-100 shadow-xs relative z-40">
+        <div className="max-w-6xl mx-auto flex items-center justify-center">
+          <img
+            src={QnaydsLOgo}
+            alt="QNAYDS Academy"
+            className="h-10 md:h-14 w-auto object-contain"
+          />
+        </div>
       </header>
-      {/* SECTION 2: HERO (PROBLEM + TRANSFORMATION) */}
-      <section className="relative px-6 pt-12 pb-12 md:pt-16 md:pb-16 max-w-5xl mx-auto flex flex-col items-center text-center">
-        <div className="absolute top-0 w-full h-full bg-linear-to-b from-blue-50 to-white -z-10"></div>
 
-        <div className="relative z-10 w-full">
-          <div className="inline-block bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide mb-6 border border-blue-200">
-            30-DAY HACKING MASTERCLASS
-          </div>
+      {/* ========================================================
+          SUGGESTED ORDER (SECTION 3 FROM PDF):
+          1. Headline + button
+          2. Video
+          3. Price box
+          4. Real student videos (move up from the middle)
+          5. Trainer (Alan Sir)
+          6. What you'll learn
+          7. Who this course is for
+          8. FAQ (with refund answer open)
+          9. Free starter kit
+          10. Final button
+          ======================================================== */}
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-blue-950 leading-tight mb-4 tracking-tight">
-            ഹാക്കിംഗ് പഠിക്കാൻ ആഗ്രഹമുണ്ടോ? <br className="hidden md:block" />{" "}
-            എവിടെ തുടങ്ങണം എന്നറിയില്ലേ?
-          </h1>
+      {/* 1. HEADLINE + BUTTON (Section 2 items 2, 3, 4, 5) */}
+      <section className="px-4 pt-8 pb-6 md:pt-12 md:pb-8 max-w-4xl mx-auto text-center">
+        {/* Headline: fits 2-3 lines on phone */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-950 leading-snug sm:leading-tight mb-4 tracking-tight max-w-3xl mx-auto">
+          ഹാക്കിംഗ് പഠിക്കാൻ ആഗ്രഹമുണ്ടോ? എവിടെ തുടങ്ങണം എന്നറിയില്ലേ?
+        </h1>
 
-          <p className="text-lg md:text-2xl text-blue-700 font-bold max-w-3xl mx-auto mb-4 leading-relaxed px-4">
-            30 ദിവസത്തിനുള്ളിൽ Cybersecurity confidently മനസ്സിലാക്കി Ethical
-            Hacking-ന്റെ ശക്തമായ Foundation Build ചെയ്യാം.
+        {/* Line under headline */}
+        <p className="text-sm sm:text-base md:text-lg text-slate-700 font-semibold max-w-2xl mx-auto mb-6 leading-relaxed">
+          30 ദിവസം കൊണ്ട് എത്തിക്കൽ ഹാക്കിംഗിന്റെ അടിസ്ഥാനം മലയാളത്തിൽ പഠിക്കാം. IT പശ്ചാത്തലം ആവശ്യമില്ല.
+        </p>
+
+        {/* NEW button on first screen (Section 2 item 4) */}
+        <div className="max-w-md mx-auto mb-6">
+          <button
+            onClick={() => triggerCheckout("First Screen Button")}
+            className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer animate-pulse-btn flex items-center justify-center gap-2"
+          >
+            <span>₹999-ന് ഇപ്പോൾ ചേരൂ</span>
+            <ArrowRight size={20} />
+          </button>
+          <p className="text-xs text-slate-500 font-bold mt-2 text-center">
+            ഉടൻ ആക്സസ് • സുരക്ഷിത പേയ്മെന്റ്
           </p>
+        </div>
 
-          <p className="text-sm md:text-base text-slate-500 font-medium max-w-2xl mx-auto mb-8">
-            Designed by experienced cybersecurity trainers and trusted by more
-            than 10,000 students across Kerala.
-          </p>
+        {/* Small line + 3 badges (Section 2 item 5) */}
+        <p className="text-xs md:text-sm text-slate-600 font-medium max-w-xl mx-auto mb-3">
+          പരിചയസമ്പന്നരായ ട്രെയിനർമാർ തയ്യാറാക്കിയത്. കേരളത്തിലെ 10,000-ലധികം വിദ്യാർത്ഥികൾ വിശ്വസിക്കുന്ന പരിശീലനം.
+        </p>
 
-          <StickyTrustBar />
-
-          {/* INTRO VIDEO */}
-          <div className="w-full max-w-xs md:max-w-sm mx-auto mt-8 mb-8">
-            <p className="text-center text-blue-600 font-bold uppercase tracking-wider mb-4">
-              🎥 WATCH BEFORE YOU ENROLL
-            </p>
-
-            <div className="rounded-3xl overflow-hidden border border-blue-100 shadow-2xl bg-black">
-              <video
-                className="block w-full h-auto object-contain"
-                controls
-                playsInline
-                preload="metadata"
-                poster={thumbnail}
-              >
-                <source src={Intro} type="video/mp4" />
-              </video>
-            </div>
-          </div>
-
-          <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 max-w-md mx-auto shadow-2xl relative overflow-hidden mt-6">
-            <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-md">
-              SAVE ₹1,001
-            </div>
-
-            <h3 className="font-bold text-blue-950 text-lg mb-4 text-left border-b border-slate-100 pb-3">
-              Course Value Stack:
-            </h3>
-            <ul className="text-left space-y-2 mb-6">
-              {[
-                "30-Day Recorded Masterclass",
-                "Lifetime Recorded Access",
-                "WhatsApp Group Support",
-                "100% Malayalam Explanation",
-                "Beginner Friendly Path",
-              ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center gap-2 text-sm text-slate-700 font-medium"
-                >
-                  <CheckCircle2 size={16} className="text-blue-500" /> {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex items-end justify-center gap-3 mb-5 border-t border-slate-100 pt-5">
-              <div className="text-slate-500 font-bold mb-1 uppercase text-xs tracking-wider flex flex-col items-end">
-                <span>Regular Price</span>
-                <span className="line-through text-lg">₹2,000</span>
-              </div>
-              <div className="text-5xl font-black text-blue-950 flex flex-col items-start leading-none">
-                <span className="text-xs text-blue-600 font-bold uppercase tracking-wider mb-1">
-                  Today
-                </span>
-                ₹999
-              </div>
-            </div>
-
-            <button
-              onClick={() => {
-                trackEvent("InitiateCheckout", {
-                  button_location: "Hero Box",
-                });
-
-                setShowCheckout(true);
-              }}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-lg py-4 md:py-5 px-4 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] mb-2 flex items-center justify-center gap-2 animate-pulse-btn"
-            >
-              {PRIMARY_CTA_TEXT} <ArrowRight size={20} className="shrink-0" />
-            </button>
-            <CTATrustIndicators />
-          </div>
+        <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 text-xs font-bold text-slate-700">
+          <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
+            <Star className="text-amber-400 fill-amber-400" size={14} /> 4.6 ഗൂഗിൾ റേറ്റിംഗ്
+          </span>
+          <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
+            <Users className="text-blue-600" size={14} /> 10,000+ വിദ്യാർത്ഥികൾ
+          </span>
+          <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
+            <FaWhatsapp className="text-emerald-500" size={14} /> WhatsApp സപ്പോർട്ട്
+          </span>
         </div>
       </section>
 
-      {/* SECTION 3: EXTERNAL & INTERNAL PAIN POINTS */}
-      <section className="py-12 bg-white px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-10 leading-tight">
-            Still trying to learn hacking from random YouTube videos?
+      {/* 2. VIDEO (Section 2 item 6) */}
+      <section className="px-4 py-4 max-w-md mx-auto text-center">
+        <p className="text-xs md:text-sm font-black text-blue-700 uppercase tracking-wider mb-3">
+          ചേരുന്നതിന് മുമ്പ് ഈ വീഡിയോ കാണൂ
+        </p>
+        <div className="rounded-3xl overflow-hidden border border-blue-200 shadow-2xl bg-black">
+          <video
+            className="block w-full h-auto object-contain"
+            controls
+            playsInline
+            preload="metadata"
+            poster={thumbnail}
+          >
+            <source src={Intro} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      {/* 3. PRICE BOX (Section 2 item 7 & 8) */}
+      <section className="px-4 py-8 max-w-lg mx-auto">
+        <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 shadow-xl shadow-blue-500/10 text-left">
+          <h2 className="text-lg md:text-xl font-black text-blue-950 mb-4 border-b border-slate-100 pb-3">
+            ഈ കോഴ്സിൽ നിങ്ങൾക്ക് കിട്ടുന്നത്:
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <div className="bg-red-50/50 p-6 rounded-2xl border border-red-100">
-              <h3 className="font-bold text-red-900 mb-4 border-b border-red-200 pb-2">
-                The Struggle is Real
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Too many confusing tutorials",
-                  "No proper step-by-step roadmap",
-                  "English terms are difficult to grasp",
-                  "No mentor to ask doubts",
-                ].map((pain, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-slate-700 font-medium text-sm"
-                  >
-                    <XCircle
-                      className="text-red-400 shrink-0 mt-0.5"
-                      size={18}
-                    />{" "}
-                    {pain}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <ul className="space-y-2.5 mb-6 text-xs md:text-sm font-semibold text-slate-700">
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>30 ദിവസത്തെ റെക്കോർഡ് ചെയ്ത ക്ലാസുകൾ</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>ലൈഫ് ടൈം ആക്സസ്</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>WhatsApp ഗ്രൂപ്പ് സപ്പോർട്ട്</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>100% മലയാളത്തിൽ പഠിപ്പിക്കുന്നു</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <strong className="text-blue-900">കോഴ്സ് സർട്ടിഫിക്കറ്റ്</strong>
+            </li>
+          </ul>
 
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <h3 className="font-bold text-slate-800 mb-4 border-b border-slate-200 pb-2">
-                Internal Doubts
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  '"Cybersecurity എനിക്ക് പഠിക്കാൻ പറ്റുമോ?"',
-                  '"Technical background ഇല്ലാത്തതുകൊണ്ട് സാധിക്കില്ലേ?"',
-                  '"ഞാൻ തുടങ്ങാൻ വൈകിപ്പോയോ?"',
-                  '"Hacking വളരെ difficult ആണെന്ന് തോന്നുന്നു."',
-                ].map((doubt, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-slate-700 font-medium text-sm italic"
-                  >
-                    <AlertCircle
-                      className="text-slate-400 shrink-0 mt-0.5"
-                      size={18}
-                    />{" "}
-                    {doubt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: PHILOSOPHICAL PROBLEM / SOLUTION (THE GUIDE) */}
-      <section className="py-10 bg-blue-950 text-white px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <QuoteIcon className="mx-auto text-blue-500/50 mb-4" />
-          <h2 className="text-xl md:text-2xl font-bold mb-4 leading-relaxed">
-            Cybersecurity പഠിക്കാൻ എല്ലാവർക്കും അവസരം ലഭിക്കണം.{" "}
-            <br className="hidden md:block" />
-            <span className="text-blue-400">
-              English അറിയാത്തതുകൊണ്ട് ഒരാളും പിന്നിൽ പോകാൻ പാടില്ല.
+          <div className="flex items-center justify-between gap-2 border-t border-slate-100 pt-4 mb-5">
+            <span className="bg-red-100 text-red-700 text-xs font-black px-2.5 py-1 rounded-md">
+              ₹1,001 ലാഭം
             </span>
-          </h2>
-          <p className="text-blue-200 font-medium text-sm max-w-2xl mx-auto">
-            We remove the confusion, provide a clear roadmap, and teach you in
-            Malayalam so you can focus on building skills, not struggling with
-            language.
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION 5: VISUAL GOOGLE TRUST */}
-      <section className="py-12 bg-slate-50 px-6 border-b border-slate-200">
-        <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <div className="bg-white p-2 rounded-full shadow-md border border-slate-200">
-              <FaGoogle className="text-[#4285F4] text-2xl" />
-            </div>
-
-            <div className="text-left">
-              <h3 className="text-blue-950 font-black text-xl leading-none">
-                Google Reviews
-              </h3>
-              <p className="text-xs text-slate-500 font-semibold mt-1">
-                Trusted by Thousands of Students
-              </p>
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <span className="text-5xl font-black text-blue-950 leading-none">
-              4.6
-            </span>
-            <div className="flex flex-col items-start">
-              <div className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={20}
-                    fill={i === 4 ? "url(#half-grad)" : "currentColor"}
-                    className={i === 4 ? "text-slate-200" : ""}
-                  />
-                ))}
-                <svg width="0" height="0">
-                  <defs>
-                    <linearGradient id="half-grad">
-                      <stop offset="60%" stopColor="#fbbf24" />
-                      <stop offset="60%" stopColor="currentColor" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <span className="text-xs font-bold text-slate-500 mt-1">
-                Based on 1.4K+ Reviews
+            <div className="text-right">
+              <span className="text-xs text-slate-400 line-through font-bold block">
+                സാധാരണ വില: ₹2,000
+              </span>
+              <span className="text-2xl md:text-3xl font-black text-blue-600">
+                ഇന്ന്: ₹999
               </span>
             </div>
           </div>
 
-          <div className="mt-4 flex justify-center">
-            <a
-              href={GOOGLE_REVIEW_URL}
-              onClick={() => trackEvent("Google_Review_Click")}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-blue-200 rounded-full shadow-sm hover:shadow-md text-blue-600 hover:text-blue-800 font-semibold transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <FaGoogle className="text-[#4285F4] text-lg" />
-              Read Google Reviews
-              <ExternalLink size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: VALUE PROPOSITION */}
-      <section className="py-12 px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-black text-blue-950">
-            How The Masterclass Works
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-white border border-blue-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
-            <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
-              <BookOpen size={32} />
-            </div>
-            <h3 className="text-lg font-bold text-blue-950 mb-2">
-              Structured Learning
-            </h3>
-            <p className="text-slate-600 text-sm font-medium">
-              Learn step-by-step without confusion.
-            </p>
-          </div>
-          <div className="bg-white border border-blue-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
-            <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
-              <ShieldCheck size={32} />
-            </div>
-            <h3 className="text-lg font-bold text-blue-950 mb-2">
-              Practical Knowledge
-            </h3>
-            <p className="text-slate-600 text-sm font-medium">
-              Understand real cybersecurity concepts.
-            </p>
-          </div>
-          <div className="bg-white border border-blue-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
-            <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
-              <span className="font-black text-2xl">മ</span>
-            </div>
-            <h3 className="text-lg font-bold text-blue-950 mb-2">
-              Beginner Friendly
-            </h3>
-            <p className="text-slate-600 text-sm font-medium">
-              Designed specifically for Malayalam learners.
-            </p>
-          </div>
-        </div>
-        <div className="text-center">
+          {/* Blue button with exact text from Section 2 item 8 */}
           <button
-            onClick={() => {
-              trackEvent("InitiateCheckout", {
-                button_location: "Section Name",
-              });
-
-              setShowCheckout(true);
-            }}
+            onClick={() => triggerCheckout("Price Box Button")}
+            className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer flex items-center justify-center gap-2"
           >
-            {PRIMARY_CTA_TEXT}
+            <span>ഹാക്കിംഗ് പഠിച്ചു തുടങ്ങാം</span>
+            <ArrowRight size={20} />
           </button>
-          <CTATrustIndicators />
+          <ButtonTrustIndicators />
         </div>
       </section>
 
-      <section>
-        <CourseSyllabus />
-      </section>
-
-      {/* SECTION 7: COURSE PLATFORM PREVIEW */}
-      <section className="py-12 bg-slate-900 text-white px-6">
+      {/* 4. REAL STUDENT VIDEOS (Moved up from the middle) */}
+      <section className="py-12 md:py-16 bg-white border-y border-slate-200 px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-black mb-4">
-              Inside The Learning Platform
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950">
+              വിദ്യാർത്ഥികളുടെ യഥാർത്ഥ അനുഭവങ്ങൾ
             </h2>
-            <p className="text-blue-300 font-medium">
-              Everything you need to succeed, accessible from your phone or
-              laptop.
+            <p className="text-xs md:text-sm text-slate-600 font-medium mt-1">
+              QNAYDS സ്റ്റുഡന്റ് റിവ്യൂ
             </p>
-          </div>
-
-          <div className="bg-slate-950 rounded-xl border border-slate-800 p-1 shadow-2xl overflow-hidden max-w-4xl mx-auto">
-            {/* Fake Browser header */}
-            <div className="flex items-center gap-2 p-3 bg-slate-900 border-b border-slate-800">
-              <div className="w-3 h-3 rounded-full bg-slate-600"></div>
-              <div className="w-3 h-3 rounded-full bg-slate-600"></div>
-              <div className="w-3 h-3 rounded-full bg-slate-600"></div>
-              <div className="ml-4 bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-md flex-1 text-center font-mono">
-                academy.qnayds.com/dashboard
-              </div>
-            </div>
-            {/* Body */}
-            <div className="p-6 grid sm:grid-cols-2 md:grid-cols-4 gap-4 bg-slate-900/50">
-              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center flex flex-col items-center justify-center gap-3">
-                <LayoutDashboard size={32} className="text-blue-400" />
-                <span className="font-bold text-sm">Course Dashboard</span>
-              </div>
-              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center flex flex-col items-center justify-center gap-3">
-                <MonitorPlay size={32} className="text-blue-400" />
-                <span className="font-bold text-sm">Recorded Lessons</span>
-              </div>
-              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center flex flex-col items-center justify-center gap-3">
-                <TrendingUp size={32} className="text-blue-400" />
-                <span className="font-bold text-sm">Progress Tracking</span>
-              </div>
-              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center flex flex-col items-center justify-center gap-3">
-                <FaWhatsapp size={32} className="text-[#25D366]" />
-                <span className="font-bold text-sm">WhatsApp Community</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 8: MEET YOUR TRAINER (AUTHORITY + EMPATHY) */}
-      <section className="py-12 bg-blue-50 px-6 border-y border-blue-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-black text-blue-950">
-              Meet Your Guide
-            </h2>
-          </div>
-
-          <div className="bg-white border border-blue-100 p-6 md:p-10 rounded-3xl flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-xl shadow-blue-900/5">
-            {/* Trainer Avatar */}
-            <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
-              <img
-                src={Alan_sir}
-                alt="Alan Sir - Senior Cybersecurity Trainer"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://ui-avatars.com/api/?name=Alan+Sir&background=2563eb&color=fff&size=512&font-size=0.33";
-                }}
-              />
-            </div>
-
-            {/* Trainer Details */}
-            <div className="text-center md:text-left flex-1">
-              <h3 className="text-3xl md:text-4xl font-black text-blue-950 mb-2">
-                Alan Sir
-              </h3>
-              <p className="text-blue-600 font-bold text-lg mb-6">
-                Senior Cybersecurity Trainer
-              </p>
-
-              <ul className="grid sm:grid-cols-2 gap-4 mb-8 text-sm">
-                <li className="flex items-center gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                  <Award className="text-amber-500 shrink-0" size={20} />
-                  <span className="font-bold text-slate-700">
-                    CEH Certified
-                  </span>
-                </li>
-                <li className="flex items-center gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                  <Shield className="text-amber-500 shrink-0" size={20} />
-                  <span className="font-bold text-slate-700">
-                    CompTIA Security+
-                  </span>
-                </li>
-                <li className="flex items-center gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                  <Users className="text-blue-500 shrink-0" size={20} />
-                  <span className="font-bold text-slate-700">
-                    5,000+ Students Trained
-                  </span>
-                </li>
-                <li className="flex items-center gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                  <Briefcase className="text-blue-500 shrink-0" size={20} />
-                  <span className="font-bold text-slate-700">
-                    8+ Years Experience
-                  </span>
-                </li>
-              </ul>
-
-              {/* Empathy Statement - Bulleted for scanning */}
-              <div className="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-lg text-slate-700 text-sm font-medium">
-                <p className="mb-2 italic">
-                  "We understand how confusing cybersecurity feels when starting
-                  from zero."
-                </p>
-                <ul className="space-y-1">
-                  <li>
-                    •{" "}
-                    <strong className="text-blue-900">
-                      Most resources are overly technical and in English.
-                    </strong>
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong className="text-blue-900">
-                      This course is completely in Malayalam
-                    </strong>{" "}
-                    to make your journey smooth.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 9: 3-STEP PLAN */}
-      <section className="py-24 bg-linear-to-b from-slate-50 via-white to-blue-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Heading */}
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center px-5 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
-              🚀 How It Works
-            </span>
-
-            <h2 className="mt-5 text-4xl md:text-5xl font-black text-blue-950">
-              Your Journey After
-              <span className="text-blue-600"> Enrollment</span>
-            </h2>
-
-            <p className="mt-5 text-lg text-slate-600">
-              Everything happens automatically. From payment to accessing your
-              course, the process takes only a few minutes.
-            </p>
-          </div>
-
-          {/* Timeline */}
-          <div className="relative mt-20">
-            {/* Desktop line */}
-            <div className="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-blue-100 rounded-full">
-              <div className="absolute left-0 top-0 h-full w-full bg-linear-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full opacity-20"></div>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-10">
-              {/* STEP 1 */}
-              <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-xl">
-                  <CreditCard size={28} />
-                </div>
-
-                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-blue-100 shadow-xl p-8">
-                  <span className="text-xs font-bold tracking-widest text-blue-600">
-                    STEP 01
-                  </span>
-
-                  <h3 className="mt-3 text-2xl font-black text-blue-950">
-                    Complete Payment
-                  </h3>
-
-                  <p className="mt-4 text-slate-600 leading-7">
-                    Securely complete your payment through Razorpay using UPI,
-                    Cards or Net Banking.
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
-                      ⏱ Takes 2 Minutes
-                    </span>
-
-                    <span className="text-4xl font-black text-blue-100">
-                      01
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* STEP 2 */}
-              <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-emerald-500 to-green-600 text-white flex items-center justify-center shadow-xl">
-                  <MailCheck size={28} />
-                </div>
-
-                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-100 shadow-xl p-8">
-                  <span className="text-xs font-bold tracking-widest text-emerald-600">
-                    STEP 02
-                  </span>
-
-                  <h3 className="mt-3 text-2xl font-black text-blue-950">
-                    Activate Account
-                  </h3>
-
-                  <p className="mt-4 text-slate-600 leading-7">
-                    We'll instantly send an activation email. Create your
-                    password and log into the LMS.
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">
-                      📧 Instant Email
-                    </span>
-
-                    <span className="text-4xl font-black text-emerald-100">
-                      02
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* STEP 3 */}
-              <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 -top-7 z-20 w-16 h-16 rounded-full bg-linear-to-br from-purple-600 to-pink-600 text-white flex items-center justify-center shadow-xl">
-                  <GraduationCap size={28} />
-                </div>
-
-                <div className="pt-12 rounded-3xl bg-white/80 backdrop-blur-xl border border-purple-100 shadow-xl p-8">
-                  <span className="text-xs font-bold tracking-widest text-purple-600">
-                    STEP 03
-                  </span>
-
-                  <h3 className="mt-3 text-2xl font-black text-blue-950">
-                    Start Learning
-                  </h3>
-
-                  <p className="mt-4 text-slate-600 leading-7">
-                    Access your recorded classes, practical labs and WhatsApp
-                    community instantly.
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
-                      🎉 Lifetime Access
-                    </span>
-
-                    <span className="text-4xl font-black text-purple-100">
-                      03
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10: IMAGINE YOURSELF AFTER 30 DAYS (TRANSFORMATION) */}
-      <section className="py-12 bg-blue-950 text-white px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-center mb-8 text-white">
-            Imagine Yourself One Month From Now
-          </h2>
-
-          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
-            {[
-              "Understanding Ethical Hacking concepts clearly",
-              "Understanding Wi-Fi & Smartphone Security",
-              "Understanding Cybersecurity terminology",
-              "Learning confidently in Malayalam",
-              "Building a strong cybersecurity foundation",
-              "Protecting yourself & others online",
-            ].map((outcome, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <CheckCircle2
-                  className="text-blue-400 shrink-0 mt-0.5"
-                  size={20}
-                />
-                <span className="font-medium text-blue-50">{outcome}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={() => {
-                trackEvent("InitiateCheckout", {
-                  button_location: "Section Name",
-                });
-
-                setShowCheckout(true);
-              }}
-              className="bg-white text-blue-950 font-black py-4 px-8 md:px-12 rounded-xl shadow-lg hover:bg-blue-50 transition-colors text-lg animate-pulse-btn"
-            >
-              {PRIMARY_CTA_TEXT}
-            </button>
-            <CTATrustIndicators />
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 11: STUDENT SUCCESS STORY (BEFORE / AFTER) */}
-      <section className="py-12 bg-slate-50 border-b border-slate-200 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-8">
-            Student Transformation
-          </h2>
-
-          <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md flex flex-col md:flex-row">
-            <div className="md:w-1/2 p-6 md:p-8 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-200">
-              <div className="flex items-center gap-2 text-slate-500 font-bold mb-4 uppercase text-xs tracking-wider">
-                <XCircle size={16} /> Before Learning
-              </div>
-              <p className="text-slate-700 italic font-medium leading-relaxed">
-                "I used to watch random YouTube videos about hacking but never
-                understood the core concepts. The technical English terms were
-                too hard, and I didn't know where to actually start."
-              </p>
-            </div>
-            <div className="md:w-1/2 p-6 md:p-8 bg-blue-50">
-              <div className="flex items-center gap-2 text-blue-600 font-bold mb-4 uppercase text-xs tracking-wider">
-                <CheckCircle2 size={16} /> After The Masterclass
-              </div>
-              <p className="text-blue-950 font-bold leading-relaxed">
-                "Everything clicked! Learning in Malayalam made complex topics
-                so easy. Now I have a clear, structured foundation in Ethical
-                Hacking and know exactly how to progress my career."
-              </p>
-              <p className="text-sm text-blue-500 mt-4 font-bold">
-                — Akhil P., Recent Student
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 12: REAL STUDENT REVIEWS */}
-      <section className="py-12 bg-white px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-black text-blue-950 mb-4">
-              Real Student Experiences
-            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleVideos.map((video) => (
-              <VideoCard key={video.id} video={video} />
+              <VideoCard
+                key={video.id}
+                video={video}
+                activeVideoId={activeVideoId}
+                onPlay={() => {
+                  setActiveVideoId(video.id);
+                  trackEvent("Video_Play", { video_id: video.id });
+                }}
+                onClose={() => setActiveVideoId(null)}
+              />
             ))}
           </div>
 
           {!showAllVideos && (
-            <div className="text-center mt-8">
+            <div className="text-center mt-4">
               <button
                 onClick={() => setShowAllVideos(true)}
-                className="bg-white text-blue-600 font-bold py-3 px-8 rounded-full border-2 border-blue-100 hover:border-blue-300 transition-colors"
+                className="bg-white text-blue-600 hover:text-blue-800 font-bold text-xs md:text-sm py-2.5 px-6 rounded-full border border-blue-200 hover:border-blue-400 transition cursor-pointer shadow-xs"
               >
-                View More Student Reviews
+                കൂടുതൽ റിവ്യൂകൾ കാണൂ
               </button>
             </div>
           )}
         </div>
       </section>
 
-      {/* SECTION 13: WHAT YOU WILL MASTER (SYLLABUS) */}
-      <section className="py-12 bg-slate-50 px-6 border-y border-slate-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-blue-950 text-center mb-8">
-            What You Will Master
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {SYLLABUS.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white border border-slate-200 p-4 rounded-xl flex flex-col items-center text-center shadow-sm hover:border-blue-300 transition-colors"
-                >
-                  <div className="bg-blue-50 p-3 rounded-full text-blue-600 shadow-sm mb-3">
-                    <Icon size={24} />
-                  </div>
-                  <span className="text-sm text-slate-800 font-bold">
-                    {item.title}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 14: WHO IS THIS FOR & NOT FOR */}
-      <section className="py-12 px-6 bg-white">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-          {/* Who is it for */}
-          <div className="bg-slate-50 p-8 rounded-3xl border border-blue-100 shadow-sm">
-            <h3 className="text-xl font-black text-blue-950 mb-6 flex items-center gap-2">
-              <ThumbsUp className="text-blue-500" /> Who Is This Course For?
-            </h3>
-            <ul className="space-y-4 mb-6">
-              {[
-                "College, Degree & Engineering Students",
-                "Working Professionals & Job Seekers",
-                "Beginners interested in Cybersecurity",
-                "Anyone wanting to learn in Malayalam",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-slate-700 font-medium"
-                >
-                  <div className="w-2 h-2 rounded-full bg-blue-500 shrink-0"></div>{" "}
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="bg-blue-50 text-blue-800 p-3 rounded-lg text-sm font-bold border border-blue-100">
-              * No previous hacking experience required.
-            </div>
-          </div>
-
-          {/* Who is it NOT for */}
-          <div className="bg-red-50/30 p-8 rounded-3xl border border-red-100 shadow-sm">
-            <h3 className="text-xl font-black text-red-950 mb-6 flex items-center gap-2">
-              <UserX className="text-red-500" /> This Course Is NOT For You
-              If...
-            </h3>
-            <ul className="space-y-4 mb-6">
-              {[
-                "You are expecting advanced Penetration Testing.",
-                "You are looking for illegal hacking methods.",
-                "You are unwilling to practice what you learn.",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-slate-700 font-medium"
-                >
-                  <XCircle className="text-red-400 shrink-0 mt-1" size={16} />{" "}
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="bg-slate-50 text-slate-600 p-3 rounded-lg text-xs font-medium border border-slate-100">
-              We focus strictly on ethical, foundational education.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 15: WHY QNAYDS IS DIFFERENT (COMPARISON) */}
-      <section className="py-12 bg-slate-50 px-6 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-8">
-            Why QNAYDS Is Different
-          </h2>
-
-          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white">
-            <div className="grid grid-cols-2 bg-slate-100 border-b border-slate-200">
-              <div className="p-4 md:p-6 text-center font-bold text-slate-500">
-                Traditional Learning
-              </div>
-              <div className="p-4 md:p-6 text-center font-black text-blue-700 bg-blue-50">
-                QNAYDS Academy
-              </div>
-            </div>
-
-            {[
-              { t: "English Only", q: "100% Malayalam" },
-              { t: "No Proper Roadmap", q: "Structured Learning" },
-              { t: "No Support", q: "WhatsApp Support" },
-              { t: "Unverified Creators", q: "Experienced Trainer" },
-              { t: "Random YouTube Videos", q: "Organized Recorded Sessions" },
-            ].map((row, idx) => (
-              <div
-                key={idx}
-                className="grid grid-cols-2 border-b border-slate-100 last:border-0"
-              >
-                <div className="p-4 flex items-center justify-center gap-2 text-slate-500 text-sm font-medium text-center">
-                  <X className="text-red-300 shrink-0" size={16} /> {row.t}
-                </div>
-                <div className="p-4 flex items-center justify-center gap-2 text-blue-950 font-bold bg-blue-50/30 text-center text-sm">
-                  <Check className="text-blue-500 shrink-0" size={18} /> {row.q}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 16: PARTNERS */}
-      <section className="py-12 bg-white px-6 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">
-            Recognized & Approved By
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-            <div className="font-black text-slate-700 text-lg md:text-xl flex items-center gap-2">
-              <Shield size={24} /> AICTE Recognised
-            </div>
-            <div className="font-black text-slate-700 text-lg md:text-xl flex items-center gap-2">
-              <Award size={24} /> MSME Approved
-            </div>
-            <div className="font-black text-slate-700 text-lg md:text-xl flex items-center gap-2">
-              <Cpu size={24} /> Kerala Startup Mission
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 17: TRANSITIONAL CTA (LEAD CAPTURE) */}
-      <section className="py-12 bg-blue-600 text-white px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <Download size={40} className="mx-auto mb-4 text-blue-200" />
-          <h2 className="text-2xl md:text-3xl font-black mb-4">
-            Not ready to start yet?
-          </h2>
-          <p className="text-blue-100 mb-6 font-medium">
-            Download our{" "}
-            <strong className="text-white">
-              Free Ethical Hacking Starter Kit
-            </strong>{" "}
-            and see exactly how to start your journey.
-          </p>
-
-          <ul className="text-blue-100 text-sm mb-8 flex flex-wrap justify-center gap-4 font-medium">
-            <li>• Learning Roadmap</li>
-            <li>• Beginner Tool List</li>
-            <li>• Career Guide</li>
-            <li>• Learning Checklist</li>
-          </ul>
-
-          {!leadCaptured ? (
-            <form
-              onSubmit={(e) => handleLeadCapture(e, "Email")}
-              className="flex flex-col sm:flex-row gap-3 justify-center max-w-lg mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                required
-                className="px-4 py-3 rounded-lg text-slate-800 w-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+      {/* 5. TRAINER (ALAN SIR) */}
+      <section className="py-12 md:py-16 bg-blue-50/50 px-4 border-b border-blue-100">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white border border-blue-100 p-6 md:p-8 rounded-3xl flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-36 h-36 md:w-44 md:h-44 shrink-0 rounded-2xl overflow-hidden border-2 border-blue-100 shadow-md">
+              <img
+                src={Alan_sir}
+                alt="Alan Sir"
+                className="w-full h-full object-cover"
               />
-              <button
-                type="submit"
-                className="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-lg whitespace-nowrap transition-colors"
-              >
-                Send via Email
-              </button>
-              {/* WhatsApp Lead Option */}
-              <button
-                type="button"
-                onClick={(e) => handleLeadCapture(e, "WhatsApp")}
-                className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 px-6 rounded-lg whitespace-nowrap transition-colors flex items-center justify-center gap-2"
-              >
-                Get via WhatsApp
-              </button>
-            </form>
-          ) : (
-            <div className="bg-blue-800/50 p-4 rounded-xl border border-blue-500 inline-block">
-              <p className="font-bold flex items-center gap-2">
-                <CheckCircle2 className="text-green-400" /> Awesome! Check your
-                inbox/WhatsApp shortly.
-              </p>
             </div>
-          )}
+            <div className="text-center md:text-left flex-1">
+              <h2 className="text-xl md:text-2xl font-black text-blue-950">
+                Alan Sir
+              </h2>
+              <p className="text-blue-600 font-bold text-xs md:text-sm mb-3">
+                സീനിയർ സൈബർ സെക്യൂരിറ്റി ട്രെയിനർ
+              </p>
+              <p className="text-xs text-slate-600 font-semibold mb-3">
+                CEH സർട്ടിഫൈഡ് • CompTIA Security+ • 5,000+ വിദ്യാർത്ഥികളെ പരിശീലിപ്പിച്ചു • 8+ വർഷത്തെ പരിചയം
+              </p>
+              <div className="bg-blue-50/60 p-3 rounded-xl border border-blue-100 text-xs text-slate-700 font-medium leading-relaxed">
+                "പൂജ്യത്തിൽ നിന്ന് തുടങ്ങുമ്പോൾ സൈബർ സെക്യൂരിറ്റി എത്ര ആശയക്കുഴപ്പമുണ്ടാക്കുമെന്ന് ഞങ്ങൾക്കറിയാം. മിക്ക പഠന സാമഗ്രികളും ഇംഗ്ലീഷിലും വളരെ ടെക്നിക്കലുമാണ്. ഈ കോഴ്സ് പൂർണ്ണമായും മലയാളത്തിലാണ്, നിങ്ങളുടെ പഠനം എളുപ്പമാക്കാൻ."
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 18: FAQ */}
-      <section className="py-12 px-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-black text-center text-blue-950 mb-8">
-          Frequently Asked Questions
-        </h2>
+      {/* 6. WHAT YOU'LL LEARN */}
+      <CourseSyllabus />
+
+      {/* 7. WHO THIS COURSE IS FOR */}
+      <section className="py-12 md:py-16 px-4 bg-white border-y border-slate-200">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-blue-100 shadow-xs">
+            <h2 className="text-lg md:text-xl font-black text-blue-950 mb-4 flex items-center gap-2">
+              <ThumbsUp className="text-blue-600" size={20} />
+              ഈ കോഴ്സ് ആർക്കൊക്കെ?
+            </h2>
+            <ul className="space-y-3 mb-4 text-xs md:text-sm text-slate-700 font-medium">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                <span>കോളേജ്, ഡിഗ്രി, എൻജിനീയറിംഗ് വിദ്യാർത്ഥികൾ</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                <span>ജോലി ചെയ്യുന്നവരും ജോലി അന്വേഷിക്കുന്നവരും</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                <span>സൈബർ സെക്യൂരിറ്റിയിൽ താൽപ്പര്യമുള്ള തുടക്കക്കാർ</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                <span>മലയാളത്തിൽ പഠിക്കാൻ ആഗ്രഹിക്കുന്ന ആർക്കും</span>
+              </li>
+            </ul>
+            <p className="text-xs font-bold text-blue-700 bg-blue-100/60 p-2.5 rounded-lg">
+              * ഹാക്കിംഗിൽ മുൻപരിചയം ആവശ്യമില്ല.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-red-100 shadow-xs">
+            <h2 className="text-lg md:text-xl font-black text-red-950 mb-4 flex items-center gap-2">
+              <UserX className="text-red-500" size={20} />
+              ഈ കോഴ്സിൽ ഇത് പ്രതീക്ഷിക്കരുത്
+            </h2>
+            <ul className="space-y-3 mb-4 text-xs md:text-sm text-slate-700 font-medium">
+              <li className="flex items-center gap-2">
+                <XCircle size={16} className="text-red-400 shrink-0" />
+                <span>അഡ്വാൻസ്ഡ് പെനിട്രേഷൻ ടെസ്റ്റിംഗ്</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <XCircle size={16} className="text-red-400 shrink-0" />
+                <span>നിയമവിരുദ്ധ ഹാക്കിംഗ് രീതികൾ</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <XCircle size={16} className="text-red-400 shrink-0" />
+                <span>പഠിച്ചത് പ്രാക്ടീസ് ചെയ്യാൻ തയ്യാറല്ലാത്തവർക്കുള്ളതല്ല</span>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-500 bg-white p-2.5 rounded-lg border border-slate-200">
+              ഞങ്ങൾ എത്തിക്കൽ, അടിസ്ഥാന വിദ്യാഭ്യാസത്തിൽ മാത്രം ശ്രദ്ധിക്കുന്നു.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ (WITH REFUND ANSWER OPEN BY DEFAULT - Section 2 item 11) */}
+      <section className="py-12 md:py-16 px-4 max-w-3xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-black text-blue-950">
+            പതിവ് ചോദ്യങ്ങൾ (FAQ)
+          </h2>
+        </div>
 
         <div className="space-y-3">
           {FAQS.map((faq, idx) => (
             <div
               key={idx}
-              className="bg-white border border-blue-100 rounded-xl overflow-hidden transition-all shadow-sm"
+              className={`bg-white border rounded-2xl overflow-hidden transition-all shadow-xs ${
+                activeFaq === idx ? "border-blue-400" : "border-slate-200"
+              }`}
             >
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center text-blue-950 font-bold hover:bg-blue-50"
-                onClick={() => {
-                  setActiveFaq(activeFaq === idx ? null : idx);
-                  if (activeFaq !== idx)
-                    trackEvent("FAQ_Open", { question: faq.q });
-                }}
+                className="w-full px-5 py-4 text-left flex justify-between items-center text-blue-950 font-bold hover:bg-slate-50 text-xs md:text-sm cursor-pointer"
+                onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
               >
                 <span className="pr-4">{faq.q}</span>
                 {activeFaq === idx ? (
@@ -1523,7 +737,7 @@ export default function App() {
                 )}
               </button>
               {activeFaq === idx && (
-                <div className="px-6 pb-5 text-sm text-slate-600 font-medium leading-relaxed">
+                <div className="px-5 pb-5 text-xs md:text-sm text-slate-600 font-medium leading-relaxed border-t border-slate-100 pt-3">
                   {faq.a}
                 </div>
               )}
@@ -1532,148 +746,170 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 19: LOW-RISK PRE-PURCHASE & FINAL OFFER */}
-      <section className="py-12 md:py-20 px-6 bg-linear-to-b from-slate-50 to-white text-center relative border-t border-slate-200">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-blue-50 text-blue-800 p-6 rounded-2xl mb-10 border border-blue-100">
-            <HeartHandshake className="mx-auto mb-3 text-blue-500" size={32} />
-            <p className="font-medium text-sm">
-              If you're unsure whether this course is right for you, contact our
-              team on WhatsApp before enrolling. We'll help you determine
-              whether this course matches your goals.
-            </p>
-            <button
-              onClick={() => handleWhatsAppContact("Pre-purchase Support Box")}
-              className="inline-block mt-4 text-blue-600 font-bold hover:underline cursor-pointer"
-            >
-              Chat with our team
-            </button>
+      {/* 9. FREE STARTER KIT */}
+      <section className="py-14 md:py-18 bg-linear-to-b from-blue-700 via-blue-800 to-indigo-900 text-white px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3 shadow-inner">
+            <Download size={28} />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-black text-blue-950 mb-4 leading-tight">
-            Your Cybersecurity Journey Starts Today.
+          <h2 className="text-2xl sm:text-3xl font-black mb-2">
+            ഇപ്പോൾ തുടങ്ങാൻ തയ്യാറല്ലേ?
           </h2>
-          <p className="text-lg text-slate-600 font-bold mb-8">
-            Become someone who understands Cybersecurity with confidence instead
-            of depending on random YouTube videos.
+          <p className="text-sm sm:text-base text-blue-100 mb-6 max-w-lg mx-auto font-medium leading-relaxed">
+            സൗജന്യ എത്തിക്കൽ ഹാക്കിംഗ് സ്റ്റാർട്ടർ കിറ്റ് ഡൗൺലോഡ് ചെയ്ത് എങ്ങനെ തുടങ്ങാമെന്ന് കാണൂ.
           </p>
 
-          <StickyTrustBar />
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+            <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
+              • ലേണിംഗ് റോഡ്‌മാപ്പ്
+            </span>
+            <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
+              • തുടക്കക്കാർക്കുള്ള ടൂൾ ലിസ്റ്റ്
+            </span>
+            <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
+              • കരിയർ ഗൈഡ്
+            </span>
+            <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
+              • ലേണിംഗ് ചെക്ക്ലിസ്റ്റ്
+            </span>
+          </div>
 
-          <div className="bg-white border-2 border-blue-500 p-8 rounded-3xl shadow-2xl mb-8 relative mt-6">
-            <h3 className="text-xl font-black text-blue-950 mb-4">
-              30-Day Hacking Masterclass
-            </h3>
-
-            <div className="mb-6">
-              <span className="text-slate-400 line-through mr-3 font-bold">
-                ₹2,000
-              </span>
-              <span className="text-6xl font-black text-blue-950">₹999</span>
-            </div>
-
+          <div className="max-w-md mx-auto">
             <button
-              onClick={() => {
-                trackEvent("InitiateCheckout", {
-                  button_location: "Section Name",
-                });
-
-                setShowCheckout(true);
-              }}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-xl py-5 px-6 rounded-xl transition-transform transform hover:scale-[1.02] shadow-[0_0_30px_rgba(37,99,235,0.4)] flex justify-center items-center gap-2 animate-pulse-btn mb-3"
+              onClick={handleLeadCapture}
+              className="w-full bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-black text-base py-4 px-6 rounded-2xl transition shadow-xl shadow-green-950/20 cursor-pointer flex items-center justify-center gap-2.5 animate-pulse-btn"
             >
-              {PRIMARY_CTA_TEXT} <ArrowRight size={24} className="shrink-0" />
+              <FaWhatsapp size={24} className="shrink-0" />
+              <span>WhatsApp-ൽ സൗജന്യമായി നേടൂ</span>
             </button>
-            <CTATrustIndicators />
+            <p className="text-xs text-blue-200 font-semibold mt-3 text-center">
+              ⚡ ഒരു മെസ്സേജ് അയക്കൂ, സ്റ്റാർട്ടർ കിറ്റ് ഉടൻ WhatsApp-ൽ ലഭിക്കും
+            </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 20: ABOUT QNAYDS */}
-      <section className="py-10 bg-slate-100 px-6 border-t border-slate-200 text-center">
-        <div className="max-w-xl mx-auto">
-          <h3 className="text-blue-950 font-black text-lg mb-2">
-            Created by QNAYDS Academy
-          </h3>
-          <p className="text-slate-600 font-medium text-sm">
-            Helping 10,000+ students begin their cybersecurity journey through
-            practical Malayalam training.
+      {/* 10. FINAL BUTTON */}
+      <section className="py-14 md:py-18 px-4 bg-slate-50 text-center border-t border-slate-200">
+        <div className="max-w-lg mx-auto bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 shadow-xl text-left">
+          <h2 className="text-lg md:text-xl font-black text-blue-950 mb-1">
+            30-Day Ethical Hacking Masterclass
+          </h2>
+          <p className="text-xs text-blue-600 font-bold mb-4">
+            ഈ കോഴ്സിൽ നിങ്ങൾക്ക് കിട്ടുന്നത്:
           </p>
+
+          <ul className="space-y-2 mb-6 text-xs md:text-sm font-semibold text-slate-700">
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>30 ദിവസത്തെ റെക്കോർഡ് ചെയ്ത ക്ലാസുകൾ</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>ലൈഫ് ടൈം ആക്സസ്</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>WhatsApp ഗ്രൂപ്പ് സപ്പോർട്ട്</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>100% മലയാളത്തിൽ പഠിപ്പിക്കുന്നു</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+              <strong className="text-blue-900">കോഴ്സ് സർട്ടിഫിക്കറ്റ്</strong>
+            </li>
+          </ul>
+
+          <div className="flex items-center justify-between border-t border-slate-100 pt-4 mb-5">
+            <span className="bg-red-100 text-red-700 text-xs font-black px-2.5 py-1 rounded-md">
+              ₹1,001 ലാഭം
+            </span>
+            <div className="text-right">
+              <span className="text-xs text-slate-400 line-through font-bold block">
+                സാധാരണ വില: ₹2,000
+              </span>
+              <span className="text-2xl md:text-3xl font-black text-blue-600">
+                ഇന്ന്: ₹999
+              </span>
+            </div>
+          </div>
+
+          <button
+            onClick={() => triggerCheckout("Final Button Section")}
+            className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer flex items-center justify-center gap-2 animate-pulse-btn"
+          >
+            <span>ഹാക്കിംഗ് പഠിച്ചു തുടങ്ങാം</span>
+            <ArrowRight size={20} />
+          </button>
+          <ButtonTrustIndicators />
         </div>
       </section>
 
-      {/* SECTION 21: STICKY MOBILE BUY BAR */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 sm:p-4 z-50 flex justify-between items-center gap-3 pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+      {/* STICKY MOBILE BOTTOM BAR */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 z-50 flex justify-between items-center gap-3 pb-safe shadow-[0_-5px_15px_rgba(0,0,0,0.06)]">
         <div className="shrink-0 pl-1">
-          <div className="text-slate-400 text-xs line-through font-bold">
+          <div className="text-slate-400 text-[10px] line-through font-bold">
             ₹2,000
           </div>
-          <div className="text-blue-950 font-black text-xl sm:text-2xl leading-none">
+          <div className="text-blue-700 font-black text-xl leading-none">
             ₹999
           </div>
         </div>
         <button
-          onClick={() => {
-            trackEvent("InitiateCheckout", {
-              button_location: "Hero Box",
-            });
-
-            setShowCheckout(true);
-          }}
-          className="flex-1 bg-blue-600 text-white font-black py-3 px-2 rounded-xl active:scale-95 transition-transform shadow-lg shadow-blue-500/30 text-xs sm:text-sm text-center"
+          onClick={() => triggerCheckout("Mobile Sticky Bar")}
+          className="flex-1 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-black py-3 px-3 rounded-xl transition shadow-md shadow-blue-500/25 text-xs text-center cursor-pointer flex items-center justify-center gap-1.5"
         >
-          GET INSTANT ACCESS
+          <span>₹999-ന് ഇപ്പോൾ ചേരൂ</span>
+          <ArrowRight size={14} />
         </button>
       </div>
 
       {/* FOOTER */}
-      <footer className="py-10 px-6 bg-slate-900 text-slate-400 text-center text-sm pb-32 md:pb-12">
+      <footer className="py-10 px-6 bg-slate-900 text-slate-400 text-center text-xs pb-28 md:pb-10 border-t border-slate-800">
         <div className="max-w-4xl mx-auto">
-          <p className="font-bold mb-4 text-white flex justify-center items-center gap-2">
-            Need Help?{" "}
+          <p className="font-bold mb-3 text-white flex justify-center items-center gap-2 text-sm">
+            സഹായം വേണോ?{" "}
             <button
               onClick={() => handleWhatsAppContact("Footer Link")}
-              className="text-blue-400 hover:underline flex items-center gap-1"
+              className="text-[#25D366] hover:underline flex items-center gap-1 cursor-pointer"
             >
-              <FaWhatsapp size={16} /> WhatsApp Us
+              <FaWhatsapp size={16} /> WhatsApp ചെയ്യൂ
             </button>
           </p>
-          <p className="mb-6">
-            © {new Date().getFullYear()} QNAYDS ACADEMY. All rights reserved.
+
+          <p className="mb-4 text-slate-500">
+            © {new Date().getFullYear()} QNAYDS അക്കാദമി. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 font-medium">
-            <a
-              href="/terms-and-conditions"
-              className="hover:text-white transition-colors"
-            >
-              Terms & Conditions
+
+          <div className="flex flex-wrap justify-center gap-4 font-medium text-slate-400">
+            <a href="/terms-and-conditions" className="hover:text-white transition">
+              നിബന്ധനകളും വ്യവസ്ഥകളും
             </a>
-            <a
-              href="/privacy-policy"
-              className="hover:text-white transition-colors"
-            >
-              Privacy Policy
+            <a href="/privacy-policy" className="hover:text-white transition">
+              സ്വകാര്യതാ നയം
             </a>
-            <a
-              href="/refund-policy"
-              className="hover:text-white transition-colors"
-            >
-              Refund Policy
+            <a href="/refund-policy" className="hover:text-white transition">
+              റീഫണ്ട് നയം
             </a>
-            <a href="/contact" className="hover:text-white transition-colors">
-              Contact
+            <a href="/contact" className="hover:text-white transition">
+              ബന്ധപ്പെടുക
             </a>
           </div>
 
-          <div className="mt-8 text-xs text-slate-500 max-w-lg mx-auto">
-            <p>
-              This is a digital recorded course with instant access. Once access
-              is provided, refunds cannot be issued. If you have any questions,
-              please contact us on WhatsApp before enrolling.
-            </p>
+          <div className="mt-5 text-[11px] text-slate-500 max-w-md mx-auto leading-relaxed">
+            ഇത് ഉടൻ ആക്സസ് ലഭിക്കുന്ന ഡിജിറ്റൽ റെക്കോർഡ് കോഴ്സ് ആണ്. ആക്സസ് നൽകിയ ശേഷം റീഫണ്ട് നൽകുന്നതല്ല. സംശയങ്ങൾ ഉണ്ടെങ്കിൽ ചേരുന്നതിന് മുമ്പ് WhatsApp-ൽ ചോദിക്കുക.
           </div>
         </div>
       </footer>
+
+      {/* CHECKOUT MODAL */}
       <CheckoutModal
         open={showCheckout}
         onClose={() => setShowCheckout(false)}
@@ -1683,20 +919,5 @@ export default function App() {
         onContinue={handleCheckout}
       />
     </div>
-  );
-}
-
-// Minimal icon for philosophical section
-function QuoteIcon(props) {
-  return (
-    <svg
-      width="48"
-      height="48"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      {...props}
-    >
-      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-    </svg>
   );
 }

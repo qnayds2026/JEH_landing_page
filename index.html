@@ -1,100 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-M79QBSPZYY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M79QBSPZYY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      gtag("js", new Date());
-      gtag("config", "G-M79QBSPZYY");
-    </script>
-    <!-- End Google Analytics -->
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
+    gtag("js", new Date());
+    gtag("config", "G-M79QBSPZYY");
+  </script>
+  <!-- End Google Analytics -->
 
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
+  <!-- Meta Pixel Code -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+
+      if (!f._fbq) f._fbq = n;
+
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js",
+    );
+
+    fbq("init", "1605940110959444");
+    fbq("track", "PageView");
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
         };
 
-        if (!f._fbq) f._fbq = n;
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
 
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "yh18n491js");
+  </script>
+  <!-- End Microsoft Clarity -->
 
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
+  <title>QNAYDS Academy</title>
 
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
+  <!-- Razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
 
-      fbq("init", "1605940110959444");
-      fbq("track", "PageView");
-    </script>
-    <!-- End Meta Pixel Code -->
+<body>
+  <div id="root"></div>
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
+  <!-- Meta Pixel noscript -->
+  <noscript>
+    <img height="1" width="1" style="display: none"
+      src="https://www.facebook.com/tr?id=1605940110959444&ev=PageView&noscript=1" />
+  </noscript>
 
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "yh18n491js");
-    </script>
-    <!-- End Microsoft Clarity -->
-
-    <title>QNAYDS Academy</title>
-
-    <!-- Razorpay -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  </head>
-
-  <body>
-    <div id="root"></div>
-
-    <!-- Meta Pixel noscript -->
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=1605940110959444&ev=PageView&noscript=1"
-      />
-    </noscript>
-
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
 </html>

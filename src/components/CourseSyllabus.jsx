@@ -130,17 +130,6 @@ export default function CourseSyllabus() {
 
         </div>
 
-        <div className="mt-10 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-center">
-          <h3 className="text-xl font-bold text-blue-950">
-            ✔ Structured 30-Day Learning Path
-          </h3>
-
-          <p className="mt-2 text-slate-600">
-            Beginner-friendly • 100% Malayalam • Practical demonstrations •
-            Lifetime access
-          </p>
-        </div>
-
       </div>
     </section>
   );
