@@ -552,11 +552,11 @@ export default function App() {
       {/* WHATSAPP BUTTON WITH SHORT LABEL (Section 2 Item 10) */}
       <button
         onClick={() => handleWhatsAppContact("Floating Icon")}
-        className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-90 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer border-2 border-white/60"
+        className="fixed bottom-44 md:bottom-8 right-4 md:right-8 z-90 bg-[#25D366] hover:bg-[#20ba59] text-white w-13 h-13 sm:w-14 sm:h-14 md:w-auto md:h-auto p-0 md:px-4 md:py-3 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border-2 border-white/60"
         aria-label="Contact on WhatsApp"
       >
-        <FaWhatsapp size={24} />
-        <span className="text-xs md:text-sm font-bold whitespace-nowrap">
+        <FaWhatsapp size={26} className="shrink-0" />
+        <span className="hidden md:inline text-xs md:text-sm font-bold whitespace-nowrap">
           സംശയമുണ്ടോ? WhatsApp-ൽ ചോദിക്കൂ
         </span>
       </button>
@@ -564,7 +564,7 @@ export default function App() {
       {/* SALES / PAYMENT POPUP NOTIFICATION (LIVE SOCIAL PROOF) */}
       <div
         className={`fixed bottom-20 md:bottom-8 left-4 md:left-8 z-85 bg-white border border-blue-100 rounded-2xl shadow-2xl p-3 sm:p-3.5 flex items-center gap-3 max-w-72 sm:max-w-xs transition-all duration-500 ease-in-out transform ${
-          notification.show && !activeVideoId
+          notification.show && !activeVideoId && !showCheckout
             ? "translate-x-0 opacity-100 scale-100 pointer-events-auto"
             : "-translate-x-full opacity-0 scale-95 pointer-events-none"
         }`}

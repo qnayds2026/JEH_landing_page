@@ -18,7 +18,7 @@ export default function CheckoutModal({
   };
 
   return (
-    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-4">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-4">
       <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="bg-blue-600 px-4 py-4 md:px-6 md:py-5 text-white">
