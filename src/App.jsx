@@ -475,6 +475,18 @@ export default function App() {
 
   const handleWhatsAppContact = (context = "Floating Button") => {
     trackEvent("WhatsApp_Click", { context });
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Contact", {
+        content_name: "WhatsApp Inquiry",
+        context,
+      });
+    }
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "contact", {
+        method: "WhatsApp",
+        context,
+      });
+    }
     const message =
       "Hi QNAYDS Team, I would like to know more about the 30-Day Ethical Hacking Masterclass.";
     window.open(
@@ -485,6 +497,17 @@ export default function App() {
 
   const handleLeadCapture = () => {
     trackEvent("Lead_Magnet_Download", { method: "WhatsApp" });
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead", {
+        content_name: "Free Ethical Hacking Starter Kit",
+        method: "WhatsApp",
+      });
+    }
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "generate_lead", {
+        content_name: "Free Ethical Hacking Starter Kit",
+      });
+    }
     window.open(
       "https://wa.me/919074871204?text=Hi%2C%20please%20send%20me%20the%20Free%20Ethical%20Hacking%20Starter%20Kit.",
       "_blank",
