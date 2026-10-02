@@ -439,6 +439,16 @@ export default function App() {
             window.fbq("track", "Purchase", {
               value: 999,
               currency: "INR",
+              content_name: "30-Day Ethical Hacking Masterclass",
+            });
+          }
+
+          if (window.gtag) {
+            window.gtag("event", "purchase", {
+              transaction_id: response.razorpay_payment_id,
+              value: 999,
+              currency: "INR",
+              items: [{ item_name: "30-Day Ethical Hacking Masterclass", price: 999 }],
             });
           }
 
@@ -482,7 +492,15 @@ export default function App() {
   };
 
   const triggerCheckout = (location) => {
-    trackEvent("InitiateCheckout", { button_location: location });
+    trackEvent("CTA_InitiateCheckout", { button_location: location });
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "InitiateCheckout", {
+        value: 999,
+        currency: "INR",
+        content_name: "30-Day Ethical Hacking Masterclass",
+        button_location: location,
+      });
+    }
     setShowCheckout(true);
   };
 
