@@ -11,68 +11,68 @@ import {
 const modules = [
   {
     icon: Shield,
-    title: "എത്തിക്കൽ ഹാക്കിംഗ് അടിസ്ഥാനങ്ങൾ",
+    title: "Ethical Hacking അടിസ്ഥാനങ്ങൾ",
     subtitle: "Ethical Hacking Fundamentals",
     topics: [
-      "സൈബർ സെക്യൂരിറ്റി അടിസ്ഥാനങ്ങൾ",
-      "എത്തിക്കൽ ഹാക്കിംഗ് രീതികൾ",
-      "അറ്റാക്ക് സർഫസുകൾ",
-      "ലീഗൽ & എത്തിക്സ്",
+      "Cybersecurity അടിസ്ഥാനങ്ങൾ",
+      "Ethical Hacking-ന്റെ പ്രധാന രീതികൾ",
+      "Attack Surfaces മനസ്സിലാക്കാം",
+      "Legal & Ethical Guidelines",
     ],
   },
   {
     icon: Terminal,
-    title: "ലിനക്സ്, Kali & സെക്യൂരിറ്റി ടൂളുകൾ",
+    title: "Linux, Kali & Security Tools",
     subtitle: "Linux, Kali & Security Tools",
     topics: [
-      "Linux കമാൻഡുകൾ",
-      "Kali Linux ഇൻസ്റ്റലേഷൻ",
+      "Linux Commands",
+      "Kali Linux Installation",
       "Android Termux ഉപയോഗം",
-      "Nmap & Burp Suite ടൂളുകൾ",
+      "Nmap & Burp Suite Tools",
     ],
   },
   {
     icon: Lock,
-    title: "സോഷ്യൽ എഞ്ചിനീയറിംഗ് & ഫിഷിംഗ്",
+    title: "Social Engineering & Phishing",
     subtitle: "Social Engineering & Phishing",
     topics: [
-      "ഫിഷിംഗ് രീതികൾ & തിരിച്ചറിയൽ",
-      "പാസ്‌വേഡ് സുരക്ഷ",
-      "ക്രിപ്റ്റോഗ്രഫി അടിസ്ഥാനങ്ങൾ",
-      "അറ്റാക്ക് പ്രിവൻഷൻ വഴികൾ",
+      "Phishing Methods & തിരിച്ചറിയൽ",
+      "Password Security",
+      "Cryptography അടിസ്ഥാനങ്ങൾ",
+      "Attack Prevention Methods",
     ],
   },
   {
     icon: Globe,
-    title: "പ്രൈവസി & ഓൺലൈൻ സുരക്ഷ",
+    title: "Privacy & Online Security",
     subtitle: "Privacy & Online Security",
     topics: [
-      "Dark Web അടിസ്ഥാനങ്ങൾ",
-      "VPN & Tor നെറ്റ്‌വർക്ക്",
-      "ഡിജിറ്റൽ പ്രൈവസി സംരക്ഷണം",
-      "ഡിവൈസ് സെക്യൂരിറ്റി",
+      "Dark Web-ന്റെ അടിസ്ഥാനങ്ങൾ",
+      "VPN & Tor Networks",
+      "Digital Privacy സംരക്ഷണം",
+      "Device Security",
     ],
   },
   {
     icon: Search,
-    title: "OSINT & റെഡ് ടീമിംഗ്",
+    title: "OSINT & Red Teaming",
     subtitle: "OSINT & Red Teaming",
     topics: [
-      "Reconnaissance രീതികൾ",
-      "OSINT അന്വേഷണങ്ങൾ",
-      "SSH സുരക്ഷ",
-      "റിമോട്ട് ആക്സസ് സുരക്ഷ",
+      "Reconnaissance Techniques",
+      "OSINT Investigations",
+      "SSH Security",
+      "Remote Access Security",
     ],
   },
   {
     icon: ShieldCheck,
-    title: "സിസ്റ്റം സെക്യൂരിറ്റി",
+    title: "System Security",
     subtitle: "System Security",
     topics: [
-      "നെറ്റ്‌വർക്ക് സുരക്ഷ",
-      "സിസ്റ്റം ഹാർഡനിംഗ്",
-      "സെക്യൂരിറ്റി ബെസ്റ്റ് പ്രാക്ടീസസ്",
-      "യഥാർത്ഥ ലോക സൈബർ സുരക്ഷ",
+      "Network Security",
+      "System Hardening",
+      "Security Best Practices",
+      "Real-World Cybersecurity",
     ],
   },
 ];
@@ -83,15 +83,16 @@ export default function CourseSyllabus() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-3">
-            30 ദിവസത്തെ ലേണിംഗ് റോഡ്‌മാപ്പ്
+            30-Day Learning Roadmap
           </span>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950">
-            നിങ്ങൾ എന്തെല്ലാം പഠിക്കും
+            നിങ്ങൾ എന്തെല്ലാം പഠിക്കും?
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
-            Ethical Hacking & Cybersecurity മലയാളത്തിൽ തുടക്കം മുതൽ പടിപടിയായി പഠിക്കാം.
+            Ethical Hacking & Cybersecurity Malayalam-ൽ
+            തുടക്കം മുതൽ step-by-step ആയി പഠിക്കാം.
           </p>
         </div>
 
@@ -111,6 +112,7 @@ export default function CourseSyllabus() {
                 <h3 className="text-lg font-black text-blue-950 mb-1">
                   {module.title}
                 </h3>
+
                 <p className="text-xs text-blue-600 font-semibold mb-4">
                   {module.subtitle}
                 </p>
@@ -125,6 +127,7 @@ export default function CourseSyllabus() {
                         size={15}
                         className="text-emerald-500 shrink-0"
                       />
+
                       <span>{topic}</span>
                     </div>
                   ))}
