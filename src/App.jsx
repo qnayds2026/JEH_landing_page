@@ -1223,7 +1223,7 @@ export default function App() {
               className="w-full bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-black text-base py-4 px-6 rounded-2xl transition shadow-xl shadow-green-950/20 cursor-pointer flex items-center justify-center gap-2.5 animate-pulse-btn"
             >
               <FaWhatsapp size={24} className="shrink-0" />
-              <span>WhatsApp-ൽ Get ചെയ്യൂ</span>
+              <span>WhatsApp-ൽ Connect ചെയ്യൂ</span>
             </button>
             <p className="text-xs text-blue-200 font-semibold mt-3 text-center">
               ⚡ ഒരു message അയക്കൂ, Starter Kit ഉടൻ WhatsApp-ൽ ലഭിക്കും
