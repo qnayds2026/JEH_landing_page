@@ -79,55 +79,55 @@ const ALL_VIDEOS = [
     id: "dSWuXMFdOaQ",
     name: "Fukri",
     role: "CEO, Fukri Smart Solutions",
-    desc: "Fukri Smart Solutions CEO ഫുക്രിയുടെ അനുഭവം. അദ്ദേഹം ഈ കോഴ്‌സ് സുഹൃത്തിന് നിർദ്ദേശിക്കുകയും പിന്നീട് ഇതിലെ ക്വാളിറ്റി കണ്ട് സ്വയം ജോയിൻ ചെയ്യുകയും ചെയ്തു.",
+    desc: "Fukri Smart Solutions CEO Fukri-യുടെ experience. ആദ്യം അദ്ദേഹം ഈ course friend-ന് recommend ചെയ്തു, പിന്നീട് course-ന്റെ quality കണ്ടിട്ട് himself join ചെയ്തു.",
   },
   {
     id: "oO2m4N7rkjc",
     name: "Student Review",
     role: "Student",
-    desc: "ഹാക്കിങ് പഠിക്കാൻ ആഗ്രഹിക്കുന്ന തുടക്കക്കാർക്ക് ഏറ്റവും മികച്ച കോഴ്‌സ് ആണിതെന്ന് വിദ്യാർത്ഥി സാക്ഷ്യപ്പെടുത്തുന്നു.",
+    desc: "Hacking പഠിക്കാൻ ആഗ്രഹിക്കുന്ന beginners-ന് ഈ course വളരെ useful ആണെന്ന് student പറയുന്നു.",
   },
   {
     id: "vILn-_i2n5U",
     name: "Student Review",
     role: "Student",
-    desc: "സങ്കീർണ്ണമായ സൈബർ സെക്യൂരിറ്റി വിഷയങ്ങൾ പോലും വളരെ ലളിതമായി മലയാളത്തിൽ മനസ്സിലാക്കിത്തരുന്നു.",
+    desc: "Complex Cybersecurity topics പോലും simple Malayalam explanations ഉപയോഗിച്ച് easy ആയി മനസ്സിലാക്കാം.",
   },
   {
     id: "mcGd31D19Xo",
     name: "Student Review",
     role: "Working Professional",
-    desc: "റെക്കോർഡഡ് ക്ലാസ്സുകൾ ആയതിനാൽ സ്വന്തം ഒഴിവുസമയത്ത് ജോലിക്ക് ഒപ്പം കണ്ട് പഠിക്കാൻ സാധിച്ചതിന്റെ അനുഭവം.",
+    desc: "Recorded classes ആയതിനാൽ സ്വന്തം free time-ൽ job-നൊപ്പം പഠിക്കാൻ കഴിഞ്ഞ experience.",
   },
   {
     id: "U-9r2GyKZ0s",
     name: "Student Review",
     role: "Student",
-    desc: "WhatsApp ഗ്രൂപ്പിലൂടെ ലഭിക്കുന്ന വേഗത്തിലുള്ള സംശയനിവാരണം വളരെ സഹായകമായി എന്ന് വിദ്യാർത്ഥി സാക്ഷ്യപ്പെടുത്തുന്നു.",
+    desc: "WhatsApp Group-ൽ കിട്ടുന്ന quick doubt support വളരെ helpful ആയിരുന്നു എന്ന് student പറയുന്നു.",
   },
   {
     id: "XflR50c2TvA",
     name: "Student Review",
     role: "Student",
-    desc: "സൈബർ ലോകത്തെ പുതിയ കാര്യങ്ങൾ തിയറി മാത്രമല്ല, പ്രാക്ടിക്കൽ ആയി മനസ്സിലാക്കാൻ ഈ കോഴ്‌സ് ഏറെ സഹായിച്ചു.",
+    desc: "Cybersecurity-യിലെ പുതിയ കാര്യങ്ങൾ theory മാത്രം അല്ലാതെ practical ആയി മനസ്സിലാക്കാൻ ഈ course ഏറെ സഹായിച്ചു.",
   },
   {
     id: "TZmmOn7nkfE",
     name: "Student Review",
     role: "Student",
-    desc: "വളരെ കുറഞ്ഞ ഫീസിൽ ഇത്രയും മൂല്യവത്തായ ഒരു കോഴ്‌സ് നൽകുന്നതിന് QNAYDS അക്കാദമിക്ക് നന്ദി.",
+    desc: "Affordable price-ൽ ഇത്രയും valuable ആയ course നൽകുന്നതിന് QNAYDS Academy-ക്ക് നന്ദി.",
   },
   {
     id: "9_Q4-pjZbn0",
     name: "Student Review",
     role: "Student",
-    desc: "എല്ലാ ക്ലാസ്സുകളും വ്യക്തവും ലളിതവുമാണ്. താല്പര്യമുള്ള ഏതൊരു തുടക്കക്കാരനും ധൈര്യമായി ജോയിൻ ചെയ്യാം.",
+    desc: "എല്ലാ classes-ും clear & simple ആണ്. Interest ഉള്ള ഏത് beginner-നും confidently join ചെയ്യാം.",
   },
   {
     id: "Qi05xOMa2m4",
     name: "Student Review",
     role: "Beginner",
-    desc: "മുൻപരിചയം ഇല്ലാത്തവർക്കും എളുപ്പത്തിൽ മനസ്സിലാകുന്ന രീതിയിലാണ് ക്ലാസ്സുകൾ ഡിസൈൻ ചെയ്തിരിക്കുന്നത്.",
+    desc: "Previous experience ഇല്ലാത്ത beginners-നും easy ആയി മനസ്സിലാകുന്ന രീതിയിലാണ് classes design ചെയ്തിരിക്കുന്നത്.",
   },
 ];
 
@@ -135,35 +135,35 @@ const ALL_VIDEOS = [
 const FAQS = [
   {
     q: "Refund policy ഉണ്ടോ?",
-    a: "ഉടൻ ആക്സസ് ലഭിക്കുന്ന ഡിജിറ്റൽ കോഴ്സ് ആയതിനാൽ പേയ്മെന്റിന് ശേഷം റീഫണ്ട് അനുവദിക്കാൻ കഴിയില്ല. കോഴ്സ് സംബന്ധിച്ച ഏത് സംശയവും ചേരുന്നതിന് മുൻപായി WhatsApp വഴി ഞങ്ങളോട് ചോദിക്കാവുന്നതാണ്.",
+    a: "ഇത് instant access ലഭിക്കുന്ന digital course ആയതിനാൽ payment കഴിഞ്ഞാൽ refund ലഭ്യമല്ല. Join ചെയ്യുന്നതിന് മുമ്പ് course സംബന്ധിച്ച doubts WhatsApp വഴി ചോദിക്കാം.",
   },
   {
-    q: "ഹാക്കിംഗിൽ മുൻപരിചയം വേണമെന്നുണ്ടോ?",
-    a: "ഒട്ടും ആവശ്യമില്ല. കമ്പ്യൂട്ടറും സ്മാർട്ട്‌ഫോണും ഉപയോഗിക്കാൻ അറിയാവുന്ന ഏതൊരു തുടക്കക്കാരനും എളുപ്പത്തിൽ കാര്യങ്ങൾ മനസ്സിലാകത്തക്ക രീതിയിലാണ് സിലബസ് തയ്യാറാക്കിയിരിക്കുന്നത്.",
+    q: "Hacking-ൽ previous experience വേണമോ?",
+    a: "ഒട്ടും ആവശ്യമില്ല. Computer & smartphone basic ആയി use ചെയ്യാൻ അറിയുന്ന beginners-നും easy ആയി മനസ്സിലാകുന്ന രീതിയിലാണ് syllabus തയ്യാറാക്കിയിരിക്കുന്നത്.",
   },
   {
-    q: "ക്ലാസുകൾ ലൈവ് ആണോ? എപ്പോഴാണ് കാണാൻ സാധിക്കുക?",
-    a: "അല്ല, ഇത് 100% റെക്കോർഡഡ് സെഷനുകളാണ് (Lifetime Access). നിങ്ങളുടെ സ്വന്തം സമയക്രമം അനുസരിച്ച്, ഒഴിവുസമയങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും ക്ലാസ്സുകൾ കാണാനും പഠിക്കാനും സാധിക്കും.",
+    q: "Classes live ആണോ? എപ്പോഴാണ് കാണാൻ കഴിയുക?",
+    a: "അല്ല, ഇത് 100% recorded sessions ആണ് (Lifetime Access). നിങ്ങളുടെ convenience അനുസരിച്ച് എപ്പോൾ വേണമെങ്കിലും classes കാണാം.",
   },
   {
-    q: "ലാപ്‌ടോപ്പ് നിർബന്ധമാണോ അതോ ഫോണിൽ പഠിക്കാമോ?",
-    a: "തുടക്കത്തിൽ ക്ലാസ്സുകൾ മനസ്സിലാക്കാൻ സ്മാർട്ട്‌ഫോൺ മതിയാകും. എന്നാൽ പ്രാക്ടിക്കൽ ആയി ചെയ്തുപഠിക്കാൻ ഒരു ബേസിക് ലാപ്ടോപ്പ് ഉണ്ടാവുന്നത് വളരെ നല്ലതാണ്.",
+    q: "Laptop നിർബന്ധമാണോ, phone-ൽ പഠിക്കാമോ?",
+    a: "Classes മനസ്സിലാക്കാൻ തുടക്കത്തിൽ smartphone മതിയാകും. Practical ആയി practice ചെയ്യാൻ ഒരു basic laptop ഉണ്ടെങ്കിൽ കൂടുതൽ നല്ലതാണ്.",
   },
   {
-    q: "പഠിക്കുമ്പോൾ സംശയങ്ങൾ വന്നാൽ എന്ത് ചെയ്യും?",
-    a: "നിങ്ങൾക്ക് ലഭിക്കുന്ന പ്രത്യേക WhatsApp ഗ്രൂപ്പ് വഴി സംശയങ്ങൾ ചോദിക്കാനും പരിഹരിക്കാനും സാധിക്കും.",
+    q: "Learning സമയത്ത് doubts വന്നാൽ എന്ത് ചെയ്യും?",
+    a: "നിങ്ങൾക്ക് ലഭിക്കുന്ന dedicated WhatsApp Group വഴി doubts ചോദിക്കാനും clear ചെയ്യാനും സാധിക്കും.",
   },
   {
-    q: "ദിവസവും എത്ര സമയം ഇതിനായി മാറ്റിവെക്കണം?",
-    a: "ദിവസവും 30 മുതൽ 45 മിനിറ്റ് വരെ മാറ്റിവെച്ചാൽ 30 ദിവസം കൊണ്ട് കോഴ്സ് വിജയകരമായി പൂർത്തിയാക്കാം. തിരക്കുള്ള ദിവസങ്ങളിൽ സ്വന്തം സൗകര്യത്തിനനുസരിച്ച് വേഗത ക്രമീകരിക്കാവുന്നതാണ്.",
+    q: "Daily എത്ര സമയം മാറ്റിവെക്കണം?",
+    a: "Daily 30–45 minutes മാറ്റിവെച്ചാൽ 30 days-ൽ course complete ചെയ്യാം. Busy days-ൽ നിങ്ങളുടെ convenience അനുസരിച്ച് pace adjust ചെയ്യാം.",
   },
   {
-    q: "കോഴ്സ് പൂർത്തിയാക്കുമ്പോൾ സർട്ടിഫിക്കറ്റ് ലഭിക്കുമോ?",
-    a: "അതെ, മാസ്റ്റർക്ലാസ് പൂർത്തിയാക്കുന്നവർക്ക് വെരിഫൈഡ് കോഴ്സ് സർട്ടിഫിക്കറ്റ് ലഭിക്കുന്നതാണ്.",
+    q: "Course complete ചെയ്താൽ Certificate ലഭിക്കുമോ?",
+    a: "അതെ, Masterclass complete ചെയ്യുന്നവർക്ക് verified Course Certificate ലഭിക്കും.",
   },
   {
-    q: "ഈ കോഴ്സിന് ശേഷം എന്ത് ചെയ്യാം?",
-    a: "ഈ മാസ്റ്റർക്ലാസ് നിങ്ങളുടെ സൈബർ സെക്യൂരിറ്റി യാത്രയുടെ ശക്തമായ അടിത്തറയാണ് (Foundation). ഇതിന് ശേഷം നിങ്ങൾക്ക് Advanced ലെവൽ സർട്ടിഫിക്കേഷൻ കോഴ്സുകളിലേക്ക് കടക്കാം.",
+    q: "ഈ course കഴിഞ്ഞാൽ എന്ത് ചെയ്യാം?",
+    a: "ഈ Masterclass നിങ്ങളുടെ Cybersecurity journey-യുടെ strong Foundation ആണ്. ഇതിന് ശേഷം Advanced-level certification courses-ലേക്ക് move ചെയ്യാം.",
   },
 ];
 
@@ -171,13 +171,13 @@ const FAQS = [
 function ButtonTrustIndicators() {
   return (
     <div className="flex justify-center items-center gap-2 md:gap-3 mt-2.5 text-[11px] md:text-xs font-semibold text-slate-500 flex-wrap text-center">
-      <span>ഉടൻ ആക്സസ്</span>
+      <span>Instant Access</span>
       <span>•</span>
-      <span>സുരക്ഷിത പേയ്മെന്റ്</span>
+      <span>Secure Payment</span>
       <span>•</span>
-      <span>സ്വന്തം വേഗത്തിൽ പഠിക്കാം</span>
+      <span>Learn at Your Own Pace</span>
       <span>•</span>
-      <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+      <span>Beginner Friendly</span>
     </div>
   );
 }
@@ -198,7 +198,7 @@ function VideoCard({ video, activeVideoId, onPlay, onClose }) {
               }}
               className="absolute top-3 right-3 z-30 bg-black/80 text-white px-3 py-1.5 rounded-full text-xs font-bold hover:bg-black transition cursor-pointer"
             >
-              ✕ അടയ്ക്കൂ
+              ✕ Close
             </button>
             <iframe
               src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
@@ -577,7 +577,7 @@ export default function App() {
             {notification.name} from {notification.location}
           </p>
           <p className="text-xs sm:text-sm font-black text-blue-950 leading-tight">
-            Purchased the Masterclass
+            Masterclass Purchased
           </p>
           <p className="text-[10px] text-blue-600 mt-1 font-semibold flex items-center gap-1">
             <Clock size={11} /> {notification.time}
@@ -594,7 +594,7 @@ export default function App() {
 
       {/* TOP BANNER (Section 2 Item 1) */}
       <div className="sticky top-0 z-50 bg-blue-600 text-white font-bold px-3 py-2.5 text-center text-xs md:text-sm shadow-md">
-        ലോഞ്ച് ഓഫർ: ₹2,000-ന്റെ കോഴ്സ് ഇപ്പോൾ ₹999 മാത്രം
+        Launch Offer: ₹2,000-ന്റെ Course ഇപ്പോൾ ₹999 മാത്രം
       </div>
 
       {/* HEADER LOGO */}
@@ -611,11 +611,11 @@ export default function App() {
       {/* 1. HEADLINE + BUTTON (Section 2 items 2, 3, 4, 5) */}
       <section className="px-4 pt-8 pb-6 md:pt-12 md:pb-8 max-w-4xl mx-auto text-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-950 leading-snug sm:leading-tight mb-4 tracking-tight max-w-3xl mx-auto">
-          ഹാക്കിംഗ് പഠിക്കാൻ ആഗ്രഹമുണ്ടോ? എവിടെ തുടങ്ങണം എന്നറിയില്ലേ?
+          Hacking പഠിക്കാൻ ആഗ്രഹമുണ്ടോ? എവിടെ നിന്ന് start ചെയ്യണം എന്നറിയില്ലേ?
         </h1>
 
         <p className="text-sm sm:text-base md:text-lg text-slate-700 font-semibold max-w-2xl mx-auto mb-6 leading-relaxed">
-          30 ദിവസം കൊണ്ട് എത്തിക്കൽ ഹാക്കിംഗിന്റെ അടിസ്ഥാനം മലയാളത്തിൽ പഠിക്കാം. IT പശ്ചാത്തലം ആവശ്യമില്ല.
+          30 ദിവസത്തിൽ Ethical Hacking-ന്റെ basics Malayalam-ൽ easy ആയി പഠിക്കാം. IT background ആവശ്യമില്ല.
         </p>
 
         <div className="max-w-md mx-auto mb-6">
@@ -623,27 +623,27 @@ export default function App() {
             onClick={() => triggerCheckout("First Screen Button")}
             className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer animate-pulse-btn flex items-center justify-center gap-2"
           >
-            <span>₹999-ന് ഇപ്പോൾ ചേരൂ</span>
+            <span>₹999-ന് ഇപ്പോൾ Enroll ചെയ്യൂ</span>
             <ArrowRight size={20} />
           </button>
           <p className="text-xs text-slate-500 font-bold mt-2 text-center">
-            ഉടൻ ആക്സസ് • സുരക്ഷിത പേയ്മെന്റ്
+            Instant Access • Secure Payment
           </p>
         </div>
 
         <p className="text-xs md:text-sm text-slate-600 font-medium max-w-xl mx-auto mb-3">
-          പരിചയസമ്പന്നരായ ട്രെയിനർമാർ തയ്യാറാക്കിയത്. കേരളത്തിലെ 10,000-ലധികം വിദ്യാർത്ഥികൾ വിശ്വസിക്കുന്ന പരിശീലനം.
+          Experienced trainers തയ്യാറാക്കിയ course. കേരളത്തിലെ 10,000+ students വിശ്വസിക്കുന്ന training.
         </p>
 
         <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 text-xs font-bold text-slate-700">
           <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
-            <Star className="text-amber-400 fill-amber-400" size={14} /> 4.6 ഗൂഗിൾ റേറ്റിംഗ്
+            <Star className="text-amber-400 fill-amber-400" size={14} /> 4.6 Google Rating
           </span>
           <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
-            <Users className="text-blue-600" size={14} /> 10,000+ വിദ്യാർത്ഥികൾ
+            <Users className="text-blue-600" size={14} /> 10,000+ Students
           </span>
           <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs flex items-center gap-1.5">
-            <FaWhatsapp className="text-emerald-500" size={14} /> WhatsApp സപ്പോർട്ട്
+            <FaWhatsapp className="text-emerald-500" size={14} /> WhatsApp Support
           </span>
         </div>
       </section>
@@ -651,7 +651,7 @@ export default function App() {
       {/* 2. VIDEO (Section 2 Item 6) */}
       <section className="px-4 py-4 max-w-md mx-auto text-center">
         <p className="text-xs md:text-sm font-black text-blue-700 uppercase tracking-wider mb-3">
-          ചേരുന്നതിന് മുമ്പ് ഈ വീഡിയോ കാണൂ
+          Enroll ചെയ്യുന്നതിന് മുമ്പ് ഈ Intro Video കാണൂ
         </p>
         <div className="rounded-3xl overflow-hidden border border-blue-200 shadow-2xl bg-black">
           <video
@@ -671,46 +671,46 @@ export default function App() {
       <section className="px-4 py-8 max-w-lg mx-auto">
         <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 shadow-xl shadow-blue-500/10 text-left">
           <h2 className="text-lg md:text-xl font-black text-blue-950 mb-4 border-b border-slate-100 pb-3">
-            ഈ കോഴ്സിൽ നിങ്ങൾക്ക് കിട്ടുന്നത്:
+            ഈ Course-ൽ നിങ്ങൾക്ക് എന്തൊക്കെ ലഭിക്കും?
           </h2>
 
           <ul className="space-y-2.5 mb-6 text-xs md:text-sm font-semibold text-slate-700">
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>30 ദിവസത്തെ റെക്കോർഡ് ചെയ്ത ക്ലാസുകൾ</span>
+              <span>30 Days Recorded Classes</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>ലൈഫ് ടൈം ആക്സസ്</span>
+              <span>Lifetime Access</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>WhatsApp ഗ്രൂപ്പ് സപ്പോർട്ട്</span>
+              <span>WhatsApp Group Support</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>100% മലയാളത്തിൽ പഠിപ്പിക്കുന്നു</span>
+              <span>100% Malayalam Explanation</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+              <span>Beginner Friendly</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <strong className="text-blue-900">കോഴ്സ് സർട്ടിഫിക്കറ്റ്</strong>
+              <strong className="text-blue-900">Course Certificate</strong>
             </li>
           </ul>
 
           <div className="flex items-center justify-between gap-2 border-t border-slate-100 pt-4 mb-5">
             <span className="bg-red-100 text-red-700 text-xs font-black px-2.5 py-1 rounded-md">
-              ₹1,001 ലാഭം
+              ₹1,001 Save ചെയ്യാം
             </span>
             <div className="text-right">
               <span className="text-xs text-slate-400 line-through font-bold block">
-                സാധാരണ വില: ₹2,000
+                Regular Price: ₹2,000
               </span>
               <span className="text-2xl md:text-3xl font-black text-blue-600">
-                ഇന്ന്: ₹999
+                Today: ₹999
               </span>
             </div>
           </div>
@@ -719,7 +719,7 @@ export default function App() {
             onClick={() => triggerCheckout("Price Box Button")}
             className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer flex items-center justify-center gap-2"
           >
-            <span>ഹാക്കിംഗ് പഠിച്ചു തുടങ്ങാം</span>
+            <span>Hacking പഠിച്ചു തുടങ്ങാം</span>
             <ArrowRight size={20} />
           </button>
           <ButtonTrustIndicators />
@@ -731,7 +731,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950">
-              വിദ്യാർത്ഥികളുടെ യഥാർത്ഥ അനുഭവങ്ങൾ
+              Real Student Experiences
             </h2>
             <p className="text-xs md:text-sm text-slate-600 font-medium mt-1">
               QNAYDS Student Reviews
@@ -760,7 +760,7 @@ export default function App() {
                 onClick={() => setShowAllVideos(true)}
                 className="bg-white text-blue-600 hover:text-blue-800 font-bold text-xs md:text-sm py-2.5 px-6 rounded-full border border-blue-200 hover:border-blue-400 transition cursor-pointer shadow-xs"
               >
-                കൂടുതൽ റിവ്യൂകൾ കാണൂ
+                More Reviews കാണൂ
               </button>
             </div>
           )}
@@ -772,23 +772,23 @@ export default function App() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950 mb-3 leading-snug">
-              ഹാക്കിംഗ് പഠിക്കാൻ ഇപ്പോഴും YouTube വീഡിയോകള്‍ നോക്കി നടക്കുകയാണോ?
+              Hacking പഠിക്കാൻ ഇപ്പോഴും YouTube videos നോക്കി നടക്കുകയാണോ?
             </h2>
           </div>
 
           <div className="bg-red-50/70 p-6 md:p-8 rounded-3xl border border-red-100 mb-8">
             <h3 className="font-black text-red-950 text-base md:text-lg mb-3">
-              നിങ്ങൾ നേരിടുന്ന പ്രശ്നങ്ങൾ:
+              നിങ്ങൾ face ചെയ്യുന്ന Problems:
             </h3>
             <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-              ധാരാളം വീഡിയോകള്‍, ഒന്നും മനസ്സിലാകുന്നില്ല • വ്യക്തമായ ഘട്ടം ഘട്ടമായ വഴി ഇല്ല • ഇംഗ്ലീഷ് വാക്കുകൾ മനസ്സിലാക്കാൻ ബുദ്ധിമുട്ട് • സംശയം ചോദിക്കാൻ ആരുമില്ല
+              ഒരുപാട് videos, പക്ഷേ clear ആയി മനസ്സിലാകുന്നില്ല • Step-by-step roadmap ഇല്ല • English terms മനസ്സിലാക്കാൻ ബുദ്ധിമുട്ട് • Doubts ചോദിക്കാൻ ആരുമില്ല
             </p>
           </div>
 
           {/* Internal Doubts: Keep already Malayalam */}
           <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-xs">
             <h3 className="font-black text-blue-950 text-base md:text-lg mb-4 border-b border-slate-100 pb-3">
-              നിങ്ങളുടെ മനസ്സിലെ സംശയങ്ങൾ:
+              നിങ്ങളുടെ Mind-ലെ Common Doubts:
             </h3>
 
             <div className="grid sm:grid-cols-2 gap-4">
@@ -797,7 +797,7 @@ export default function App() {
                   "Cybersecurity എനിക്ക് പഠിക്കാൻ പറ്റുമോ?"
                 </p>
                 <p className="text-xs text-slate-600 font-medium">
-                  തീർച്ചയായും! സങ്കീർണ്ണമായ കാര്യങ്ങൾ ലളിതമായ ഉദാഹരണങ്ങളോടെയാണ് ക്ലാസുകളിൽ വിവരിക്കുന്നത്.
+                  തീർച്ചയായും! Complex concepts simple examples ഉപയോഗിച്ച് explain ചെയ്യുന്നു.
                 </p>
               </div>
 
@@ -806,7 +806,7 @@ export default function App() {
                   "Technical background ഇല്ലാത്തതുകൊണ്ട് സാധിക്കില്ലേ?"
                 </p>
                 <p className="text-xs text-slate-600 font-medium">
-                  സാധിക്കും! കോഡിംഗ് ആവശ്യമില്ലാതെ തന്നെ സെക്യൂരിറ്റി ടൂളുകൾ കൈകാര്യം ചെയ്യാൻ പരിശീലിക്കാം.
+                  സാധിക്കും! Coding knowledge ഇല്ലെങ്കിലും security tools step-by-step ആയി പഠിക്കാം.
                 </p>
               </div>
 
@@ -815,7 +815,7 @@ export default function App() {
                   "ഞാൻ തുടങ്ങാൻ വൈകിപ്പോയോ?"
                 </p>
                 <p className="text-xs text-slate-600 font-medium">
-                  ഇല്ല! സ്കൂൾ-കോളേജ് വിദ്യാർത്ഥികൾ മുതൽ ജോലി ചെയ്യുന്നവർ വരെ ഏത് പ്രായത്തിലുള്ളവർക്കും എളുപ്പത്തിൽ തുടങ്ങാം.
+                  ഇല്ല! School/College students മുതൽ working professionals വരെ ആർക്കും start ചെയ്യാം.
                 </p>
               </div>
 
@@ -824,7 +824,7 @@ export default function App() {
                   "Hacking വളരെ difficult ആണെന്ന് തോന്നുന്നു."
                 </p>
                 <p className="text-xs text-slate-600 font-medium">
-                  ശരിയായ റോഡ്‌മാപ്പും മലയാളത്തിലുള്ള വിശദീകരണവും ഉണ്ടെങ്കിൽ ഏതൊരാൾക്കും എളുപ്പത്തിൽ വഴങ്ങും.
+                  ശരിയായ roadmap + Malayalam explanation ഉണ്ടെങ്കിൽ Hacking easy ആയി പഠിക്കാം.
                 </p>
               </div>
             </div>
@@ -837,10 +837,10 @@ export default function App() {
         <div className="max-w-3xl mx-auto">
           <QuoteIcon className="mx-auto text-blue-400/40 mb-3" />
           <h2 className="text-lg md:text-2xl font-black mb-3 leading-relaxed">
-            Cybersecurity പഠിക്കാൻ എല്ലാവർക്കും അവസരം ലഭിക്കണം. English അറിയാത്തതുകൊണ്ട് ഒരാളും പിന്നിൽ പോകാൻ പാടില്ല.
+            Cybersecurity പഠിക്കാൻ എല്ലാവർക്കും opportunity ലഭിക്കണം. English അറിയാത്തത് കൊണ്ട് ആരും പിന്നിലാകേണ്ടതില്ല.
           </h2>
           <p className="text-blue-300 font-medium text-xs md:text-sm max-w-xl mx-auto">
-            ആശയക്കുഴപ്പം ഒഴിവാക്കി, വ്യക്തമായ വഴി കാണിച്ച്, മലയാളത്തിൽ പഠിപ്പിക്കുന്നു. ഭാഷയുടെ പ്രശ്നമില്ലാതെ സ്കിൽ നേടാം.
+            Confusion ഒഴിവാക്കി, clear roadmap നൽകി Malayalam-ൽ പഠിപ്പിക്കുന്നു. Language barrier ഇല്ലാതെ skill develop ചെയ്യാം.
           </p>
         </div>
       </section>
@@ -856,7 +856,7 @@ export default function App() {
               </span>
             </div>
             <p className="text-xs md:text-sm text-slate-700 font-bold">
-              ആയിരക്കണക്കിന് വിദ്യാർത്ഥികൾ വിശ്വസിക്കുന്നു | 1,400+ റിവ്യൂകളെ അടിസ്ഥാനമാക്കി
+              ആയിരക്കണക്കിന് students വിശ്വസിക്കുന്നു | 1,400+ Reviews അടിസ്ഥാനമാക്കി
             </p>
           </div>
 
@@ -867,7 +867,7 @@ export default function App() {
             onClick={() => trackEvent("Google_Review_Click")}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-blue-200 rounded-full text-xs font-bold text-blue-700 hover:bg-blue-50 transition shadow-xs whitespace-nowrap shrink-0 cursor-pointer"
           >
-            <span>ഗൂഗിൾ റിവ്യൂസ് വായിക്കൂ</span>
+            <span>Google Reviews വായിക്കൂ</span>
             <ExternalLink size={12} />
           </a>
         </div>
@@ -880,28 +880,28 @@ export default function App() {
       <section className="py-14 md:py-16 bg-slate-900 text-white px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-black mb-2">
-            ലേണിംഗ് പ്ലാറ്റ്‌ഫോമിനുള്ളിൽ
+            Learning Platform-നുള്ളിൽ
           </h2>
           <p className="text-xs md:text-sm text-slate-300 font-medium mb-8">
-            ഫോണിലോ ലാപ്ടോപ്പിലോ എളുപ്പത്തിൽ ഉപയോഗിക്കാം
+            Phone-ലോ Laptop-ലോ easy ആയി use ചെയ്യാം
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-center flex flex-col items-center gap-2.5">
               <LayoutDashboard size={28} className="text-blue-400" />
-              <span className="font-bold text-xs sm:text-sm">കോഴ്സ് ഡാഷ്‌ബോർഡ്</span>
+              <span className="font-bold text-xs sm:text-sm">Course Dashboard</span>
             </div>
             <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-center flex flex-col items-center gap-2.5">
               <MonitorPlay size={28} className="text-blue-400" />
-              <span className="font-bold text-xs sm:text-sm">റെക്കോർഡ് ചെയ്ത ക്ലാസുകൾ</span>
+              <span className="font-bold text-xs sm:text-sm">Recorded Classes</span>
             </div>
             <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-center flex flex-col items-center gap-2.5">
               <TrendingUp size={28} className="text-blue-400" />
-              <span className="font-bold text-xs sm:text-sm">പുരോഗതി ട്രാക്കിംഗ്</span>
+              <span className="font-bold text-xs sm:text-sm">Progress Tracking</span>
             </div>
             <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-center flex flex-col items-center gap-2.5">
               <FaWhatsapp size={28} className="text-[#25D366]" />
-              <span className="font-bold text-xs sm:text-sm">WhatsApp കമ്മ്യൂണിറ്റി</span>
+              <span className="font-bold text-xs sm:text-sm">WhatsApp Community</span>
             </div>
           </div>
         </div>
@@ -920,17 +920,17 @@ export default function App() {
             </div>
             <div className="text-center md:text-left flex-1">
               <h2 className="text-xl md:text-2xl font-black text-blue-950 mb-1">
-                നിങ്ങളെ പഠിപ്പിക്കുന്നത് - Alan Sir, സീനിയർ സൈബർസെക്യൂരിറ്റി ട്രെയിനർ
+                നിങ്ങളെ പഠിപ്പിക്കുന്നത് - Alan Sir, Senior Cybersecurity Trainer
               </h2>
               <p className="text-xs text-blue-600 font-bold mb-3">
-                CEH സർട്ടിഫൈഡ് • CompTIA Security+ • 5,000+ വിദ്യാർത്ഥികളെ പരിശീലിപ്പിച്ചു • 8+ വർഷത്തെ പരിചയം
+                CEH Certified • CompTIA Security+ • 5,000+ Students Trained • 8+ Years Experience
               </p>
               <div className="bg-blue-50/60 p-4 rounded-xl border border-blue-100 text-xs sm:text-sm text-slate-700 font-medium leading-relaxed space-y-2">
                 <p className="italic">
-                  "തിയറി കാണാതെ പഠിക്കുന്നതിലല്ല, പ്രാക്ടിക്കലായി ടൂളുകൾ ഉപയോഗിച്ച് കാര്യങ്ങൾ മനസ്സിലാക്കുന്നതിലാണ് കാര്യം."
+                  "Theory മാത്രം പഠിക്കുന്നതല്ല, practical ആയി tools use ചെയ്ത് concepts മനസ്സിലാക്കുന്നതാണ് പ്രധാനപ്പെട്ടത്."
                 </p>
                 <p>
-                  • ലളിതമായ മലയാളത്തിൽ ഘട്ടം ഘട്ടമായ ലാബ് പരിശീലനം. • സംശയങ്ങൾ തീർക്കാനും ഗൈഡ് ചെയ്യാനും നേരിട്ടുള്ള സപ്പോർട്ട്.
+                  • Simple Malayalam-ൽ step-by-step lab training. • Doubts clear ചെയ്യാനും guide ചെയ്യാനും direct support.
                 </p>
               </div>
             </div>
@@ -943,10 +943,10 @@ export default function App() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-blue-950 mb-2">
-              ചേർന്നതിന് ശേഷം എന്ത് സംഭവിക്കും?
+              Enroll ചെയ്ത ശേഷം എന്താണ് നടക്കുന്നത്?
             </h2>
             <p className="text-xs md:text-sm text-slate-600 font-medium max-w-xl mx-auto">
-              എല്ലാം ഓട്ടോമാറ്റിക്കാണ്. പേയ്മെന്റ് മുതൽ കോഴ്സ് ആക്സസ് വരെ കുറച്ച് മിനിറ്റുകൾ മാത്രം.
+              എല്ലാം simple & automatic ആണ്. Payment മുതൽ course access വരെ കുറച്ച് minutes മാത്രം.
             </p>
           </div>
 
@@ -956,10 +956,10 @@ export default function App() {
                 <CreditCard size={20} />
               </div>
               <h3 className="font-black text-blue-950 text-base mb-2">
-                1. പേയ്മെന്റ് ചെയ്യൂ
+                1. Payment ചെയ്യൂ
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                Razorpay വഴി UPI, കാർഡ്, നെറ്റ് ബാങ്കിംഗ് ഉപയോഗിച്ച് സുരക്ഷിതമായി പേയ്മെന്റ് ചെയ്യാം. (2 മിനിറ്റ്)
+                Razorpay വഴി UPI, Card, Net Banking ഉപയോഗിച്ച് secure ആയി payment ചെയ്യാം. (2 minutes)
               </p>
             </div>
 
@@ -968,10 +968,10 @@ export default function App() {
                 <MailCheck size={20} />
               </div>
               <h3 className="font-black text-blue-950 text-base mb-2">
-                2. അക്കൗണ്ട് ആക്റ്റിവേറ്റ് ചെയ്യൂ
+                2. Account Activate ചെയ്യൂ
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                ഞങ്ങൾ ഉടൻ ആക്റ്റിവേഷൻ ഇമെയിൽ അയയ്ക്കും. പാസ്‌വേഡ് ഉണ്ടാക്കി ലോഗിൻ ചെയ്യാം.
+                ഞങ്ങൾ ഉടൻ activation email അയക്കും. Password create ചെയ്ത് login ചെയ്യാം.
               </p>
             </div>
 
@@ -980,10 +980,10 @@ export default function App() {
                 <GraduationCap size={20} />
               </div>
               <h3 className="font-black text-blue-950 text-base mb-2">
-                3. പഠനം തുടങ്ങൂ
+                3. Learning Start ചെയ്യൂ
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                റെക്കോർഡ് ചെയ്ത ക്ലാസുകളും WhatsApp കമ്മ്യൂണിറ്റിയും ഉപയോഗിക്കാം. (ലൈഫ് ടൈം ആക്സസ്)
+                റെക്കോർഡ് ചെയ്ത ക്ലാസുകളും WhatsApp Communityയും ഉപയോഗിക്കാം. (Lifetime Access)
               </p>
             </div>
           </div>
@@ -994,17 +994,17 @@ export default function App() {
       <section className="py-14 md:py-16 bg-blue-950 text-white px-4 border-b border-blue-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-black mb-8">
-            ഒരു മാസം കഴിഞ്ഞ് നിങ്ങൾ ഇങ്ങനെയായിരിക്കും
+            One Month കഴിഞ്ഞാൽ നിങ്ങൾക്ക്...
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-3.5 max-w-3xl mx-auto text-left">
             {[
-              "എത്തിക്കൽ ഹാക്കിംഗ് കാര്യങ്ങൾ വ്യക്തമായി മനസ്സിലാക്കും",
-              "Wi-Fi, സ്മാർട്ട്‌ഫോൺ സുരക്ഷ മനസ്സിലാക്കും",
-              "സൈബർസെക്യൂരിറ്റി വാക്കുകൾ മനസ്സിലാക്കും",
-              "മലയാളത്തിൽ ആത്മവിശ്വാസത്തോടെ പഠിക്കും",
-              "ശക്തമായ സൈബർസെക്യൂരിറ്റി അടിത്തറ ഉണ്ടാക്കും",
-              "നിങ്ങളെയും മറ്റുള്ളവരെയും ഓൺലൈനിൽ സംരക്ഷിക്കും",
+              "Ethical Hacking concepts clear ആയി മനസ്സിലാക്കും",
+              "Wi-Fi & Smartphone Security മനസ്സിലാക്കും",
+              "Cybersecurity terms confidently understand ചെയ്യും",
+              "Malayalam-ൽ confidence-ോടെ പഠിക്കും",
+              "Strong Cybersecurity Foundation build ചെയ്യും",
+              "Online-ൽ നിങ്ങളെയും മറ്റുള്ളവരെയും protect ചെയ്യാൻ പഠിക്കും",
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -1022,17 +1022,17 @@ export default function App() {
       <section className="py-12 md:py-14 bg-white px-4 border-b border-slate-200">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl md:text-2xl font-black text-blue-950 mb-6 text-center">
-            വിദ്യാർത്ഥിയുടെ മാറ്റം
+            Student Transformation
           </h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-red-50/60 p-5 rounded-2xl border border-red-100 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-              <span className="font-bold text-red-900 block mb-2">പഠിക്കുന്നതിന് മുമ്പ്:</span>
+              <span className="font-bold text-red-900 block mb-2">Before Masterclass:</span>
               "ഓൺലൈനിൽ പരതി നടന്ന് ധാരാളം സമയം പാഴായി. എവിടെ തുടങ്ങണം, ഏത് ടൂളുകൾ ഇൻസ്റ്റാൾ ചെയ്യണം എന്നതിൽ ഒരു വ്യക്തതയും ലഭിച്ചിരുന്നില്ല."
             </div>
 
             <div className="bg-emerald-50/60 p-5 rounded-2xl border border-emerald-100 text-xs sm:text-sm text-slate-800 leading-relaxed font-bold">
-              <span className="font-black text-emerald-900 block mb-2">മാസ്റ്റർക്ലാസിന് ശേഷം:</span>
+              <span className="font-black text-emerald-900 block mb-2">After Masterclass:</span>
               "30 ദിവസത്തെ ഈ റോഡ്‌മാപ്പ് കാര്യങ്ങൾ വളരെ എളുപ്പമാക്കി. Linux, നെറ്റ്‌വർക്കിംഗ്, സുരക്ഷാ രീതികൾ എന്നിവ കൃത്യമായി പഠിച്ചെടുത്തു. കരിയറിലേക്ക് അടുത്ത പടി വെക്കാൻ ഇപ്പോൾ നല്ല ആത്മവിശ്വാസമുണ്ട്."
               <p className="text-[11px] text-blue-600 font-bold mt-2">— Akhil P.</p>
             </div>
@@ -1046,52 +1046,52 @@ export default function App() {
           <div className="bg-white p-6 md:p-8 rounded-3xl border border-blue-100 shadow-xs">
             <h2 className="text-lg md:text-xl font-black text-blue-950 mb-4 flex items-center gap-2">
               <ThumbsUp className="text-blue-600" size={20} />
-              ഈ കോഴ്സ് ആർക്കൊക്കെ?
+              ഈ Course ആർക്കൊക്കെ?
             </h2>
             <ul className="space-y-3 mb-4 text-xs md:text-sm text-slate-700 font-medium">
               <li className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-                <span>കോളേജ്, ഡിഗ്രി, എൻജിനീയറിംഗ് വിദ്യാർത്ഥികൾ</span>
+                <span>College, Degree, Engineering Students</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-                <span>ജോലി ചെയ്യുന്നവരും ജോലി അന്വേഷിക്കുന്നവരും</span>
+                <span>Working Professionals & Job Seekers</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-                <span>സൈബർസെക്യൂരിറ്റിയിൽ താൽപ്പര്യമുള്ള തുടക്കക്കാർ</span>
+                <span>Cybersecurity-ൽ താൽപ്പര്യമുള്ള Beginners</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-                <span>മലയാളത്തിൽ പഠിക്കാൻ ആഗ്രഹിക്കുന്ന ആർക്കും</span>
+                <span>Malayalam-ൽ പഠിക്കാൻ ആഗ്രഹിക്കുന്ന ആർക്കും</span>
               </li>
             </ul>
             <p className="text-xs font-bold text-blue-700 bg-blue-100/60 p-2.5 rounded-lg">
-              * ഹാക്കിംഗിൽ മുൻപരിചയം ആവശ്യമില്ല.
+              * Hacking-ൽ previous experience ആവശ്യമില്ല.
             </p>
           </div>
 
           <div className="bg-white p-6 md:p-8 rounded-3xl border border-red-100 shadow-xs">
             <h2 className="text-lg md:text-xl font-black text-red-950 mb-4 flex items-center gap-2">
               <UserX className="text-red-500" size={20} />
-              ഈ കോഴ്സിൽ ഇത് പ്രതീക്ഷിക്കരുത്
+              ഈ Course-ൽ എന്താണ് expect ചെയ്യരുത്?
             </h2>
             <ul className="space-y-3 mb-4 text-xs md:text-sm text-slate-700 font-medium">
               <li className="flex items-center gap-2">
                 <XCircle size={16} className="text-red-400 shrink-0" />
-                <span>അഡ്വാൻസ്ഡ് പെനിട്രേഷൻ ടെസ്റ്റിംഗ്</span>
+                <span>Advanced Penetration Testing</span>
               </li>
               <li className="flex items-center gap-2">
                 <XCircle size={16} className="text-red-400 shrink-0" />
-                <span>നിയമവിരുദ്ധ ഹാക്കിംഗ് രീതികൾ</span>
+                <span>Illegal Hacking Methods</span>
               </li>
               <li className="flex items-center gap-2">
                 <XCircle size={16} className="text-red-400 shrink-0" />
-                <span>പഠിച്ചത് പ്രാക്ടീസ് ചെയ്യാൻ തയ്യാറല്ലാത്തവർക്കുള്ളതല്ല</span>
+                <span>Practice ചെയ്യാൻ തയ്യാറല്ലാത്തവർക്ക് ഇത് suitable അല്ല</span>
               </li>
             </ul>
             <p className="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
-              ഞങ്ങൾ എത്തിക്കൽ, അടിസ്ഥാന വിദ്യാഭ്യാസത്തിൽ മാത്രം ശ്രദ്ധിക്കുന്നു.
+              ഞങ്ങൾ Ethical Hacking-ന്റെ basic & educational side-ൽ മാത്രം focus ചെയ്യുന്നു.
             </p>
           </div>
         </div>
@@ -1101,23 +1101,23 @@ export default function App() {
       <section className="py-10 bg-white px-4 border-b border-slate-200 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
-            അംഗീകാരങ്ങൾ
+            Recognitions & Approvals
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 text-xs sm:text-sm font-black text-slate-700">
             <span className="flex items-center gap-1.5 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
-              <Shield size={16} className="text-blue-600" /> AICTE അംഗീകൃതം
+              <Shield size={16} className="text-blue-600" /> AICTE Approved
             </span>
             <span className="flex items-center gap-1.5 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
-              <Award size={16} className="text-amber-600" /> MSME അംഗീകൃതം
+              <Award size={16} className="text-amber-600" /> MSME Recognized
             </span>
             <span className="flex items-center gap-1.5 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
-              <Cpu size={16} className="text-emerald-600" /> കേരള സ്റ്റാർട്ടപ്പ് മിഷൻ
+              <Cpu size={16} className="text-emerald-600" /> Kerala Startup Mission
             </span>
           </div>
         </div>
       </section>
 
-      {/* DEDICATED REFUND POLICY SECTION / SESSION (റീഫണ്ട് നയം - 100% സുതാര്യമായ പോളിസി) */}
+      {/* DEDICATED REFUND POLICY SECTION / SESSION (Refund Policy - 100% സുതാര്യമായ പോളിസി) */}
       <section className="py-12 md:py-16 bg-white px-4 border-b border-slate-200">
         <div className="max-w-3xl mx-auto bg-amber-50/70 border border-amber-200/90 rounded-3xl p-6 md:p-8 text-center shadow-xs">
           <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mx-auto mb-3 shadow-xs">
@@ -1125,19 +1125,19 @@ export default function App() {
           </div>
 
           <h2 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
-            റീഫണ്ട് പോളിസി (Refund Policy)
+            Refund Policy
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-700 font-medium max-w-xl mx-auto leading-relaxed mb-4">
-            ഇത് ഉടൻ ആക്സസ് ലഭിക്കുന്ന ഡിജിറ്റൽ റെക്കോർഡ് കോഴ്സ് ആണ്. എൻറോൾ ചെയ്ത ഉടൻ തന്നെ എല്ലാ ക്ലാസുകളിലേക്കും ലൈഫ്‌ടൈം ആക്സസ് ലഭ്യമാകുന്നതിനാൽ, ആക്സസ് നൽകിയ ശേഷം റീഫണ്ട് നൽകാൻ സാധിക്കില്ല.
+            ഇത് Instant Access ലഭിക്കുന്ന ഡിജിറ്റൽ റെക്കോർഡ് Course ആണ്. എൻറോൾ ചെയ്ത ഉടൻ തന്നെ എല്ലാ ക്ലാസുകളിലേക്കും ലൈഫ്‌ടൈം ആക്സസ് ലഭ്യമാകുന്നതിനാൽ, ആക്സസ് നൽകിയ ശേഷം റീഫണ്ട് നൽകാൻ സാധിക്കില്ല.
           </p>
 
           <div className="bg-white/95 border border-amber-200 rounded-2xl p-4 max-w-lg mx-auto text-xs sm:text-sm text-slate-700 font-medium mb-5 text-left shadow-xs">
             <p className="font-bold text-amber-950 mb-1 flex items-center gap-1.5">
-              <span>💡</span> 100% സുതാര്യതയും പൂർണ്ണ സംതൃപ്തിയും:
+              <span>💡</span> 100% Transparency & Full Clarity:
             </p>
             <p className="text-xs text-slate-600 leading-relaxed">
-              ചേരുന്നതിന് മുമ്പ് കോഴ്സ് കണ്ടന്റ്, ഭാഷ, അല്ലെങ്കിൽ മറ്റ് കാര്യങ്ങളെക്കുറിച്ച് എന്തെങ്കിലും സംശയങ്ങളുണ്ടെങ്കിൽ, ഞങ്ങളുടെ ട്രെയിനിംഗ് ടീമുമായി WhatsApp-ൽ സംസാരിച്ച് പൂർണ്ണ വ്യക്തത വരുത്താം.
+              Join ചെയ്യുന്നതിന് മുമ്പ് course content, language, അല്ലെങ്കിൽ മറ്റേതെങ്കിലും കാര്യങ്ങളെക്കുറിച്ച് doubts ഉണ്ടെങ്കിൽ WhatsApp വഴി training team-നോട് സംസാരിച്ച് complete clarity നേടാം.
             </p>
           </div>
 
@@ -1146,7 +1146,7 @@ export default function App() {
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition shadow-md shadow-green-900/10 cursor-pointer hover:scale-105 active:scale-95"
           >
             <FaWhatsapp size={18} />
-            <span>സംശയങ്ങൾ WhatsApp-ൽ ചോദിക്കൂ</span>
+            <span>WhatsApp-ൽ Doubts ചോദിക്കൂ</span>
           </button>
         </div>
       </section>
@@ -1155,7 +1155,7 @@ export default function App() {
       <section className="py-12 md:py-16 px-4 max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-black text-blue-950">
-            പതിവ് ചോദ്യങ്ങൾ
+            Frequently Asked Questions
           </h2>
         </div>
 
@@ -1196,24 +1196,24 @@ export default function App() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-black mb-2">
-            ഇപ്പോൾ തുടങ്ങാൻ തയ്യാറല്ലേ?
+            Not Ready to Start Yet?
           </h2>
           <p className="text-sm sm:text-base text-blue-100 mb-6 max-w-lg mx-auto font-medium leading-relaxed">
-            സൗജന്യ എത്തിക്കൽ ഹാക്കിംഗ് സ്റ്റാർട്ടർ കിറ്റ് ഡൗൺലോഡ് ചെയ്ത് എങ്ങനെ തുടങ്ങാമെന്ന് കാണൂ.
+            Free Ethical Hacking Starter Kit download ചെയ്ത് എങ്ങനെ start ചെയ്യാമെന്ന് മനസ്സിലാക്കൂ.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
             <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
-              • ലേണിംഗ് റോഡ്‌മാപ്പ്
+              • Learning Roadmap
             </span>
             <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
-              • തുടക്കക്കാർക്കുള്ള ടൂൾ ലിസ്റ്റ്
+              • Beginner Tool List
             </span>
             <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
-              • കരിയർ ഗൈഡ്
+              • Career Guide
             </span>
             <span className="bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-100 border border-white/15">
-              • ലേണിംഗ് ചെക്ക്‌ലിസ്റ്റ്
+              • Learning Checklist
             </span>
           </div>
 
@@ -1223,10 +1223,10 @@ export default function App() {
               className="w-full bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-black text-base py-4 px-6 rounded-2xl transition shadow-xl shadow-green-950/20 cursor-pointer flex items-center justify-center gap-2.5 animate-pulse-btn"
             >
               <FaWhatsapp size={24} className="shrink-0" />
-              <span>WhatsApp-ൽ നേടൂ</span>
+              <span>WhatsApp-ൽ Get ചെയ്യൂ</span>
             </button>
             <p className="text-xs text-blue-200 font-semibold mt-3 text-center">
-              ⚡ ഒരു മെസ്സേജ് അയക്കൂ, സ്റ്റാർട്ടർ കിറ്റ് ഉടൻ WhatsApp-ൽ ലഭിക്കും
+              ⚡ ഒരു message അയക്കൂ, Starter Kit ഉടൻ WhatsApp-ൽ ലഭിക്കും
             </p>
           </div>
         </div>
@@ -1236,19 +1236,19 @@ export default function App() {
       <section className="py-14 md:py-18 px-4 bg-slate-50 text-center border-t border-slate-200">
         <div className="max-w-2xl mx-auto mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-blue-950 mb-3">
-            നിങ്ങളുടെ സൈബർസെക്യൂരിറ്റി യാത്ര ഇന്ന് തുടങ്ങാം.
+            Your Cybersecurity Journey Starts Today
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-semibold max-w-lg mx-auto mb-4">
-            YouTube വീഡിയോകള്‍ നോക്കി ആശയക്കുഴപ്പത്തിലാകുന്നതിന് പകരം, സൈബർസെക്യൂരിറ്റി ആത്മവിശ്വാസത്തോടെ മനസ്സിലാക്കുന്ന ഒരാളാകൂ.
+            YouTube videos നോക്കി confusion ആകുന്നതിന് പകരം, Cybersecurity confidence-ോടെ മനസ്സിലാക്കുന്ന ഒരാളാകൂ.
           </p>
 
           <div className="bg-blue-50 border border-blue-200 p-4 rounded-2xl text-xs sm:text-sm text-blue-950 font-medium inline-block">
-            <span>കോഴ്സിനെക്കുറിച്ച് കൂടുതൽ ചോദിച്ചറിയണമെന്നുണ്ടോ? </span>
+            <span>Course-നെക്കുറിച്ച് കൂടുതൽ അറിയണമെന്നുണ്ടോ? </span>
             <button
               onClick={() => handleWhatsAppContact("Final Section Consultation")}
               className="text-emerald-700 font-bold hover:underline cursor-pointer inline-flex items-center gap-1 ml-1"
             >
-              <FaWhatsapp size={15} /> WhatsApp-ൽ ടീമിനോട് സംസാരിക്കാം
+              <FaWhatsapp size={15} /> WhatsApp-ൽ Team-നോട് സംസാരിക്കാം
             </button>
           </div>
         </div>
@@ -1256,49 +1256,49 @@ export default function App() {
         {/* Final Price Box */}
         <div className="max-w-lg mx-auto bg-white border-2 border-blue-500 rounded-3xl p-6 md:p-8 shadow-xl text-left">
           <h3 className="text-lg md:text-xl font-black text-blue-950 mb-1">
-            30 ദിവസത്തെ എത്തിക്കൽ ഹാക്കിംഗ് മാസ്റ്റർക്ലാസ്
+            30-Day Ethical Hacking Masterclass
           </h3>
           <p className="text-xs text-blue-600 font-bold mb-4">
-            ഈ കോഴ്സിൽ നിങ്ങൾക്ക് കിട്ടുന്നത്:
+            ഈ Course-ൽ നിങ്ങൾക്ക് എന്തൊക്കെ ലഭിക്കും?
           </p>
 
           <ul className="space-y-2 mb-6 text-xs md:text-sm font-semibold text-slate-700">
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>30 ദിവസത്തെ റെക്കോർഡ് ചെയ്ത ക്ലാസുകൾ</span>
+              <span>30 Days Recorded Classes</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>ലൈഫ് ടൈം ആക്സസ്</span>
+              <span>Lifetime Access</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>WhatsApp ഗ്രൂപ്പ് സപ്പോർട്ട്</span>
+              <span>WhatsApp Group Support</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>100% മലയാളത്തിൽ പഠിപ്പിക്കുന്നു</span>
+              <span>100% Malayalam Explanation</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>തുടക്കക്കാർക്ക് അനുയോജ്യം</span>
+              <span>Beginner Friendly</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <strong className="text-blue-900">കോഴ്സ് സർട്ടിഫിക്കറ്റ്</strong>
+              <strong className="text-blue-900">Course Certificate</strong>
             </li>
           </ul>
 
           <div className="flex items-center justify-between border-t border-slate-100 pt-4 mb-5">
             <span className="bg-red-100 text-red-700 text-xs font-black px-2.5 py-1 rounded-md">
-              ₹1,001 ലാഭം
+              ₹1,001 Save ചെയ്യാം
             </span>
             <div className="text-right">
               <span className="text-xs text-slate-400 line-through font-bold block">
-                സാധാരണ വില: ₹2,000
+                Regular Price: ₹2,000
               </span>
               <span className="text-2xl md:text-3xl font-black text-blue-600">
-                ഇന്ന്: ₹999
+                Today: ₹999
               </span>
             </div>
           </div>
@@ -1307,7 +1307,7 @@ export default function App() {
             onClick={() => triggerCheckout("Final Button Section")}
             className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base md:text-lg py-4 px-6 rounded-2xl transition shadow-lg shadow-blue-500/30 cursor-pointer flex items-center justify-center gap-2 animate-pulse-btn"
           >
-            <span>ഹാക്കിംഗ് പഠിച്ചു തുടങ്ങാം</span>
+            <span>Hacking പഠിച്ചു തുടങ്ങാം</span>
             <ArrowRight size={20} />
           </button>
           <ButtonTrustIndicators />
@@ -1328,7 +1328,7 @@ export default function App() {
           onClick={() => triggerCheckout("Mobile Sticky Bar")}
           className="flex-1 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-black py-3 px-3 rounded-xl transition shadow-md shadow-blue-500/25 text-xs text-center cursor-pointer flex items-center justify-center gap-1.5"
         >
-          <span>₹999-ന് ഇപ്പോൾ ചേരൂ</span>
+          <span>₹999-ന് ഇപ്പോൾ Enroll ചെയ്യൂ</span>
           <ArrowRight size={14} />
         </button>
       </div>
@@ -1337,11 +1337,11 @@ export default function App() {
       <footer className="py-10 px-6 bg-slate-900 text-slate-400 text-center text-xs pb-28 md:pb-10 border-t border-slate-800">
         <div className="max-w-4xl mx-auto">
           <p className="font-bold mb-2 text-white text-xs sm:text-sm">
-            QNAYDS അക്കാദമി ഒരുക്കിയത് - പ്രായോഗിക മലയാളം പരിശീലനത്തിലൂടെ 10,000+ വിദ്യാർത്ഥികൾക്ക് സൈബർസെക്യൂരിറ്റി യാത്രയ്ക്ക് തുടക്കമിടുന്നു.
+            QNAYDS അക്കാദമി ഒരുക്കിയത് - പ്രായോഗിക മലയാളം പരിശീലനത്തിലൂടെ 10,000+ Studentsക്ക് Cybersecurity യാത്രയ്ക്ക് തുടക്കമിടുന്നു.
           </p>
 
           <p className="font-bold mb-3 text-white flex justify-center items-center gap-1 text-xs sm:text-sm">
-            സഹായം വേണോ?{" "}
+            Need Help?{" "}
             <button
               onClick={() => handleWhatsAppContact("Footer Link")}
               className="text-[#25D366] hover:underline flex items-center gap-1 cursor-pointer ml-1"
@@ -1352,25 +1352,25 @@ export default function App() {
 
           <div className="flex flex-wrap justify-center gap-4 my-3 font-medium text-slate-400">
             <a href="/terms-and-conditions" className="hover:text-white transition">
-              നിബന്ധനകളും വ്യവസ്ഥകളും
+              Terms & Conditions
             </a>
             <a href="/privacy-policy" className="hover:text-white transition">
-              സ്വകാര്യതാ നയം
+              Privacy Policy
             </a>
             <a href="/refund-policy" className="hover:text-white transition">
-              റീഫണ്ട് നയം
+              Refund Policy
             </a>
             <a href="/contact" className="hover:text-white transition">
-              ബന്ധപ്പെടുക
+              Contact Us
             </a>
           </div>
 
           <p className="mb-3 text-slate-500">
-            © 2026 QNAYDS അക്കാദമി. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.
+            © 2026 QNAYDS Academy. All Rights Reserved.
           </p>
 
           <div className="text-[11px] text-slate-500 max-w-md mx-auto leading-relaxed">
-            ഡിജിറ്റൽ ആക്സസ് കോഴ്സ് ആയതിനാൽ പേയ്മെന്റിന് ശേഷം റീഫണ്ട് ലഭ്യമല്ല. കൂടുതൽ വിവരങ്ങൾക്ക് റീഫണ്ട് പോളിസി കാണുക.
+            Digital access course ആയതിനാൽ payment കഴിഞ്ഞാൽ refund ലഭ്യമല്ല. കൂടുതൽ details-ക്ക് Refund Policy കാണുക.
           </div>
         </div>
       </footer>

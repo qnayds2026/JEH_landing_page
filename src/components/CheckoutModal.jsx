@@ -30,11 +30,11 @@ export default function CheckoutModal({
           </button>
 
           <h2 className="text-xl md:text-2xl font-black">
-            പ്രവേശനം പൂർത്തിയാക്കൂ
+            Enrollment പൂർത്തിയാക്കൂ
           </h2>
 
           <p className="mt-1 text-xs md:text-sm text-blue-100">
-            തുടരുന്നതിനായി നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക
+            Continue ചെയ്യാൻ നിങ്ങളുടെ details നൽകുക
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function CheckoutModal({
           {/* Course Card */}
           <div className="mb-4 rounded-2xl border border-blue-100 bg-blue-50 p-4">
             <h3 className="font-bold text-blue-950">
-              30 ദിവസത്തെ എത്തിക്കൽ ഹാക്കിംഗ് മാസ്റ്റർക്ലാസ്
+              30-Day Ethical Hacking Masterclass
             </h3>
 
             <div className="mt-3 flex items-center justify-between">
@@ -58,7 +58,7 @@ export default function CheckoutModal({
               </div>
 
               <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs md:text-sm font-bold text-emerald-700">
-                ₹1,001 ലാഭം
+                ₹1,001 Save ചെയ്യാം
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function CheckoutModal({
 
               <input
                 name="name"
-                placeholder="പൂർണ്ണമായ പേര് (Full Name)"
+                placeholder="Full Name / പൂർണ്ണമായ പേര്"
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500 text-sm"
@@ -89,7 +89,7 @@ export default function CheckoutModal({
               <input
                 type="email"
                 name="email"
-                placeholder="ഇമെയിൽ വിലാസം (Email)"
+                placeholder="Email Address / ഇമെയിൽ വിലാസം"
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500 text-sm"
@@ -104,7 +104,7 @@ export default function CheckoutModal({
 
               <input
                 name="phone"
-                placeholder="10-അക്ക മൊബൈൽ നമ്പർ (WhatsApp)"
+                placeholder="10-Digit Mobile Number / WhatsApp"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-slate-200 py-2.5 pl-11 pr-4 outline-none transition focus:border-blue-500 text-sm"
@@ -122,11 +122,12 @@ export default function CheckoutModal({
 
               <div>
                 <h4 className="font-bold text-emerald-800 text-xs md:text-sm">
-                  സുരക്ഷിത പേയ്മെന്റ് (Secure Checkout)
+                  Secure Payment / സുരക്ഷിത പേയ്മെന്റ്
                 </h4>
 
                 <p className="mt-1 text-xs text-emerald-700 leading-relaxed font-medium">
-                  Razorpay വഴി സുരക്ഷിതമായി പേയ്മെന്റ് ചെയ്യാം. പേയ്മെന്റിന് ശേഷം ഉടൻ ആക്റ്റിവേഷൻ ഇമെയിൽ ലഭിക്കും.
+                  Razorpay വഴി secure ആയി payment ചെയ്യാം. Payment complete
+                  ചെയ്തതിന് ശേഷം ഉടൻ activation email ലഭിക്കും.
                 </p>
               </div>
             </div>
@@ -138,7 +139,7 @@ export default function CheckoutModal({
               onClick={onClose}
               className="flex-1 rounded-xl border border-slate-200 py-3 font-semibold transition hover:bg-slate-50 text-xs md:text-sm cursor-pointer"
             >
-              റദ്ദാക്കുക (Cancel)
+              Cancel / റദ്ദാക്കുക
             </button>
 
             <button
@@ -146,7 +147,9 @@ export default function CheckoutModal({
               disabled={loading}
               className="flex-1 rounded-xl bg-blue-600 py-3 font-bold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 text-xs md:text-sm cursor-pointer shadow-md shadow-blue-500/25"
             >
-              {loading ? "പ്രോസസ്സ് ചെയ്യുന്നു..." : "പേയ്മെന്റിലേക്ക് തുടരുക (₹999)"}
+              {loading
+                ? "Processing ചെയ്യുന്നു..."
+                : "Continue to Payment (₹999)"}
             </button>
           </div>
         </div>
